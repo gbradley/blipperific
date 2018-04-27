@@ -1,0 +1,6 @@
+framework module Pods_Blipperific {
+  umbrella header "Pods-Blipperific-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Library/WebServer/Documents/projects/Blipperific/Blipperific/IMG_2137.JPG">
+   </FileRef>
+   <FileRef
       location = "self:Blipperific.xcodeproj">
    </FileRef>
 </Workspace>

@@ -9,14 +9,55 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate {
 
     var window: UIWindow?
-
+    var theme: Theme!
+    var tabBarController : UITabBarController!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        // Load up the tab bar from the XIB, which means we can use the appearance proxy on its tab bar and the bar items.
+        self.tabBarController = Bundle.main.loadNibNamed("TabBar", owner: self, options: nil)![0] as! UITabBarController
+        self.tabBarController.delegate = self
+        self.loadBrowseTab(self.tabBarController.viewControllers![0] as! UINavigationController)
+        self.loadSettingsTab(self.tabBarController.viewControllers![1] as! UINavigationController)
+            
+        window!.rootViewController = self.tabBarController
+        window!.makeKeyAndVisible()
+        
+        // Set the inital theme.
+        self.switchTheme("White")
+        
         return true
+    }
+    
+    // Load the brose tab into its nav controller.
+    private func loadBrowseTab(_ navigationController : UINavigationController) {
+        let browseViewController = BrowseViewController(nibName: "BrowseView", bundle: nil)
+        browseViewController.title = "Browse"
+        navigationController.viewControllers = [browseViewController]
+    }
+    
+    // Load the settings tab into its nav controller.
+    private func loadSettingsTab(_ navigationController : UINavigationController) {
+        let settingsViewController = SettingsViewController(nibName: "SettingsView", bundle: nil)
+        settingsViewController.title = "Settings"
+        navigationController.viewControllers = [settingsViewController]
+    }
+    
+    // Switch to the named theme.
+    func switchTheme(_ name : String) {
+        
+        let theme = Theme.named(name)
+        theme.apply()
+        
+        /* Used when not inside a nav controller, can remove otherwise.
+        if let controller =  self.tabBarController {
+            controller.setNeedsStatusBarAppearanceUpdate()
+        }*/
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
