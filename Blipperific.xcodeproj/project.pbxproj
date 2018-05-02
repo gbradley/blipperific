@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BF2CCCCD209A045F004598B8 /* StatisticButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2CCCCC209A045F004598B8 /* StatisticButton.swift */; };
 		BF2CCCCF209A2BF5004598B8 /* Int+Abbreviation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2CCCCE209A2BF5004598B8 /* Int+Abbreviation.swift */; };
+		BF2CCCD1209A5EB3004598B8 /* UsernameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2CCCD0209A5EB3004598B8 /* UsernameButton.swift */; };
 		BF4B333F2090F716000262F8 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B333E2090F716000262F8 /* UIColor+Hex.swift */; };
 		BF4B33412090FA6B000262F8 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B33402090FA6B000262F8 /* Theme.swift */; };
 		BF4B33432090FADC000262F8 /* WhiteTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B33422090FADB000262F8 /* WhiteTheme.swift */; };
@@ -64,6 +65,7 @@
 		57111022F5883FA3C2677ABD /* Pods-Blipperific.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blipperific.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Blipperific/Pods-Blipperific.debug.xcconfig"; sourceTree = "<group>"; };
 		BF2CCCCC209A045F004598B8 /* StatisticButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticButton.swift; sourceTree = "<group>"; };
 		BF2CCCCE209A2BF5004598B8 /* Int+Abbreviation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Abbreviation.swift"; sourceTree = "<group>"; };
+		BF2CCCD0209A5EB3004598B8 /* UsernameButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameButton.swift; sourceTree = "<group>"; };
 		BF4B333E2090F716000262F8 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		BF4B33402090FA6B000262F8 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		BF4B33422090FADB000262F8 /* WhiteTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteTheme.swift; sourceTree = "<group>"; };
@@ -244,9 +246,10 @@
 				BF8B4DCD20930BCF00BAD163 /* PhotoBackgroundView.swift */,
 				BF4B337E2091CA1C000262F8 /* Tables */,
 				BF4B334820910271000262F8 /* HeadingLabel.swift */,
-				BF4B339120924C0D000262F8 /* TitleLabel.swift */,
 				BF5AA3A320933EAA00FFFF57 /* DisclosureButton.swift */,
+				BF2CCCD0209A5EB3004598B8 /* UsernameButton.swift */,
 				BF56B15B2099B7AD00BFF4EC /* BackButton.swift */,
+				BF4B339120924C0D000262F8 /* TitleLabel.swift */,
 				BF56B1632099EB2500BFF4EC /* StatisticLabel.swift */,
 				BF2CCCCC209A045F004598B8 /* StatisticButton.swift */,
 			);
@@ -454,6 +457,7 @@
 				BF7C3D9C2090D28500DF0689 /* BrowseViewController.swift in Sources */,
 				BF4B33432090FADC000262F8 /* WhiteTheme.swift in Sources */,
 				BF56B1502099335C00BFF4EC /* Notification.swift in Sources */,
+				BF2CCCD1209A5EB3004598B8 /* UsernameButton.swift in Sources */,
 				BF4B33452090FC6A000262F8 /* RetroTheme.swift in Sources */,
 				BF4B339220924C0D000262F8 /* TitleLabel.swift in Sources */,
 				BF56B15C2099B7AD00BFF4EC /* BackButton.swift in Sources */,

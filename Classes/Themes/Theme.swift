@@ -13,6 +13,7 @@ class Theme {
     var headingColor : UIColor!
     var textColor : UIColor!
     var buttonColor : UIColor!
+    var usernameButtonColor : UIColor!
     var backgroundColor : UIColor!
     var selectedBackgroundColor : UIColor!
     var photoBackgroundColor : UIColor!
@@ -96,6 +97,10 @@ class Theme {
         UIButton.appearance().setTitleColor(self.textColor, for:.disabled)
         UIButton.appearance().tintColor = self.buttonColor
         
+        UILabel.appearance(whenContainedInInstancesOf: [UsernameButton.self]).font = self.usernameButtonFont()
+        UsernameButton.appearance().setTitleColor(self.usernameButtonColor, for:.normal)
+        UsernameButton.appearance().setTitleColor(self.buttonColor, for:.highlighted)
+        
         StatisticButton.appearance().setTitleColor(self.textColor, for:.normal)
         StatisticButton.appearance().setTitleColor(self.buttonColor, for: .highlighted)
         StatisticButton.appearance().setTitleColor(self.buttonColor, for: .selected)
@@ -118,6 +123,10 @@ class Theme {
     
     func backButtonFont() -> UIFont {
         return UIFont(name: self.fontName, size: 14.0)!
+    }
+    
+    func usernameButtonFont() -> UIFont {
+        return UIFont(name: self.fontName, size: 12.0)!
     }
     
     // Force the app to redraw using the most recent appearance.

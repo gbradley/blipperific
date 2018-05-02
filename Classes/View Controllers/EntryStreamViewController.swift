@@ -55,7 +55,7 @@ class EntryStreamViewController : UIViewController, UITableViewDelegate, UITable
         
         // Configure the image and its labels.
         cell.mainImageView.sd_setImage(with: url, for: .normal)
-        cell.usernameLabel.text = entry.username
+        cell.usernameButton.setTitle(entry.username, for: .normal)
         cell.titleLabel.text = entry.title
         
         // Configure the counts.

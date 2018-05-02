@@ -19,7 +19,7 @@ class EntryStreamTableViewCell : UITableViewCell {
     @IBOutlet var photoBackgroundView : PhotoBackgroundView!
     @IBOutlet var titleLabel : TitleLabel!
     @IBOutlet var mainImageView : UIButton!
-    @IBOutlet var usernameLabel : TitleLabel!
+    @IBOutlet var usernameButton : UIButton!
     @IBOutlet var detailView : UIView!
     
     @IBOutlet var starButton : StatisticButton!
@@ -29,6 +29,9 @@ class EntryStreamTableViewCell : UITableViewCell {
     @IBOutlet var starCountLabel : StatisticLabel!
     @IBOutlet var favouriteCountLabel : StatisticLabel!
     @IBOutlet var commentCountLabel : StatisticLabel!
+    
+    let actions : [String]! = ["entry", "journal", "star", "favourite", "comment"]
+    let selectableActions : [String]! = ["star", "favourite", "comment"]
     
     var delegate : EntryStreamTableViewCellDelegate?
     
@@ -51,7 +54,7 @@ class EntryStreamTableViewCell : UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         titleLabel.isHidden = selected
-        usernameLabel.isHidden = selected
+        usernameButton.isHidden = selected
         detailView.isHidden = !selected
         
         // Switching themes + selected cells can cause issues with backgrounds, so reset it here.
@@ -70,16 +73,15 @@ class EntryStreamTableViewCell : UITableViewCell {
              photoBackgroundView.backgroundColor = theme.photoBackgroundColor
         }
     }
-   
-    @IBAction func imageTapped(_ sender: Any) {
-        self.delegate?.entryStreamTableViewCell(self, didTriggerAction: "entry")
-    }
-    
-    @IBAction func statisticButtonTapped(_ sender: Any) {
+
+    // Inform the delegate when an action is requested.
+    @IBAction func actionButtonTapped(_ sender: Any) {
         let button = sender as! UIButton
-        if (!button.isSelected) {
-            button.isSelected = true
-            let action : String = ["star", "favourite", "comment"][button.tag]
+        let action : String = self.actions[button.tag]
+        let selectable = self.selectableActions.contains(action)
+        
+        if (!selectable || !button.isSelected) {
+            button.isSelected = selectable
             self.delegate?.entryStreamTableViewCell(self, didTriggerAction: action)
         }
     }

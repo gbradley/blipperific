@@ -32,21 +32,22 @@
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwZ-cF-zZT">
                                 <rect key="frame" x="5" y="5" width="365" height="265"/>
                                 <connections>
-                                    <action selector="imageTapped:" destination="Ccl-7F-46u" eventType="touchUpInside" id="R48-bk-z5m"/>
+                                    <action selector="actionButtonTapped:" destination="Ccl-7F-46u" eventType="touchUpInside" id="Gcb-jf-Qb8"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" text="THE WHITE PONY This is a really long title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="G6a-bJ-Dae" customClass="TitleLabel" customModule="Blipperific" customModuleProvider="target">
-                                <rect key="frame" x="5" y="280" width="262" height="20"/>
+                                <rect key="frame" x="5" y="280" width="291" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Something" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="YdZ-et-hNn" customClass="TitleLabel" customModule="Blipperific" customModuleProvider="target">
-                                <rect key="frame" x="287" y="280" width="83" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nnF-cq-nRc" customClass="UsernameButton" customModule="Blipperific" customModuleProvider="target">
+                                <rect key="frame" x="316" y="280" width="54" height="20"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="actionButtonTapped:" destination="Ccl-7F-46u" eventType="touchUpInside" id="cXT-eO-4Km"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sww-X5-Btl">
                                 <rect key="frame" x="5" y="275" width="365" height="35"/>
                                 <subviews>
@@ -95,13 +96,13 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypO-N5-qmO" customClass="StatisticButton" customModule="Blipperific" customModuleProvider="target">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypO-N5-qmO" customClass="StatisticButton" customModule="Blipperific" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="35"/>
                                                 <fontDescription key="fontDescription" name="FontAwesome5FreeRegular" family="Font Awesome 5 Free" pointSize="17"/>
                                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title=""/>
                                                 <connections>
-                                                    <action selector="statisticButtonTapped:" destination="Ccl-7F-46u" eventType="touchUpInside" id="aak-OI-HoI"/>
+                                                    <action selector="actionButtonTapped:" destination="Ccl-7F-46u" eventType="touchUpInside" id="Epc-tI-iw1"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -132,13 +133,13 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9QC-G0-Zdc" customClass="StatisticButton" customModule="Blipperific" customModuleProvider="target">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9QC-G0-Zdc" customClass="StatisticButton" customModule="Blipperific" customModuleProvider="target">
                                                 <rect key="frame" x="-0.5" y="0.0" width="50" height="35"/>
                                                 <fontDescription key="fontDescription" name="FontAwesome5FreeRegular" family="Font Awesome 5 Free" pointSize="17"/>
                                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title=""/>
                                                 <connections>
-                                                    <action selector="statisticButtonTapped:" destination="Ccl-7F-46u" eventType="touchUpInside" id="DsT-Bk-wIS"/>
+                                                    <action selector="actionButtonTapped:" destination="Ccl-7F-46u" eventType="touchUpInside" id="pbM-WU-JnR"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -169,13 +170,13 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHU-tG-qIR" customClass="StatisticButton" customModule="Blipperific" customModuleProvider="target">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHU-tG-qIR" customClass="StatisticButton" customModule="Blipperific" customModuleProvider="target">
                                                 <rect key="frame" x="-0.5" y="0.0" width="50" height="35"/>
                                                 <fontDescription key="fontDescription" name="FontAwesome5FreeRegular" family="Font Awesome 5 Free" pointSize="17"/>
                                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title=""/>
                                                 <connections>
-                                                    <action selector="statisticButtonTapped:" destination="Ccl-7F-46u" eventType="touchUpInside" id="j16-Vw-QQP"/>
+                                                    <action selector="actionButtonTapped:" destination="Ccl-7F-46u" eventType="touchUpInside" id="wH5-w4-1i3"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -200,11 +201,11 @@
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bdX-g2-tUC">
                                         <rect key="frame" x="315" y="0.0" width="50" height="35"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t3o-EG-xhl">
+                                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t3o-EG-xhl" customClass="StatisticButton" customModule="Blipperific" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="35"/>
                                                 <fontDescription key="fontDescription" name="FontAwesome5FreeSolid" family="Font Awesome 5 Free" pointSize="17"/>
                                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title=""/>
+                                                <state key="normal" title=""/>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.85882352939999995" green="0.35294117650000001" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -253,18 +254,18 @@
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="G6a-bJ-Dae" secondAttribute="bottom" constant="10" id="0gT-G8-psA"/>
-                            <constraint firstAttribute="bottom" secondItem="YdZ-et-hNn" secondAttribute="bottom" constant="10" id="0lF-no-7lj"/>
                             <constraint firstItem="Sww-X5-Btl" firstAttribute="leading" secondItem="y9N-su-byv" secondAttribute="leading" constant="5" id="3Xg-iN-YhC"/>
                             <constraint firstAttribute="trailing" secondItem="fwZ-cF-zZT" secondAttribute="trailing" constant="5" id="CwN-gd-Rxv"/>
                             <constraint firstItem="fwZ-cF-zZT" firstAttribute="top" secondItem="y9N-su-byv" secondAttribute="top" constant="5" id="DFQ-Q0-ayA"/>
+                            <constraint firstItem="nnF-cq-nRc" firstAttribute="top" secondItem="fwZ-cF-zZT" secondAttribute="bottom" constant="10" id="E3L-Ly-emG"/>
+                            <constraint firstAttribute="trailing" secondItem="nnF-cq-nRc" secondAttribute="trailing" constant="5" id="LdV-DW-UlM"/>
                             <constraint firstAttribute="bottom" secondItem="fwZ-cF-zZT" secondAttribute="bottom" constant="40" id="Mkg-Yf-LLA"/>
+                            <constraint firstItem="nnF-cq-nRc" firstAttribute="leading" secondItem="G6a-bJ-Dae" secondAttribute="trailing" constant="20" id="QCS-sh-SHp"/>
                             <constraint firstItem="G6a-bJ-Dae" firstAttribute="leading" secondItem="y9N-su-byv" secondAttribute="leading" constant="5" id="Sd7-ni-tDX"/>
                             <constraint firstItem="fwZ-cF-zZT" firstAttribute="leading" secondItem="y9N-su-byv" secondAttribute="leading" constant="5" id="Sev-cQ-3Do"/>
                             <constraint firstAttribute="bottom" secondItem="Sww-X5-Btl" secondAttribute="bottom" id="Y9N-bY-ubk"/>
                             <constraint firstAttribute="trailing" secondItem="Sww-X5-Btl" secondAttribute="trailing" constant="5" id="cCD-un-Zpi"/>
-                            <constraint firstAttribute="trailing" secondItem="YdZ-et-hNn" secondAttribute="trailing" constant="5" id="n3p-wv-D3m"/>
-                            <constraint firstItem="YdZ-et-hNn" firstAttribute="top" secondItem="fwZ-cF-zZT" secondAttribute="bottom" constant="10" id="uay-zU-L4h"/>
-                            <constraint firstItem="YdZ-et-hNn" firstAttribute="leading" secondItem="G6a-bJ-Dae" secondAttribute="trailing" constant="20" id="v36-Z6-0re"/>
+                            <constraint firstAttribute="bottom" secondItem="nnF-cq-nRc" secondAttribute="bottom" constant="10" id="ioe-s2-CJ1"/>
                             <constraint firstItem="G6a-bJ-Dae" firstAttribute="top" secondItem="fwZ-cF-zZT" secondAttribute="bottom" constant="10" id="x28-Iw-HRN"/>
                         </constraints>
                     </view>
@@ -287,7 +288,7 @@
                 <outlet property="starButton" destination="ypO-N5-qmO" id="OdU-v1-YZA"/>
                 <outlet property="starCountLabel" destination="eCh-VZ-YZe" id="K0O-ei-0jS"/>
                 <outlet property="titleLabel" destination="G6a-bJ-Dae" id="FeF-AV-iI8"/>
-                <outlet property="usernameLabel" destination="YdZ-et-hNn" id="6yO-Y8-C4c"/>
+                <outlet property="usernameButton" destination="nnF-cq-nRc" id="zP2-h4-9un"/>
                 <outlet property="viewCountLabel" destination="t72-T4-Jgv" id="oEG-oV-E0L"/>
             </connections>
             <point key="canvasLocation" x="4.5" y="79"/>

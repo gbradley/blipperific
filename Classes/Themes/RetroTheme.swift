@@ -15,6 +15,7 @@ class RetroTheme : Theme {
         self.headingColor = UIColor.init(rgb: 0xFFFFFF)
         self.textColor = UIColor.init(rgb: 0xcbcbcb)
         self.buttonColor = UIColor.init(rgb: 0xebdfac)
+        self.usernameButtonColor = UIColor.init(rgb: 0xc2c2c2)
         self.backgroundColor = UIColor.init(rgb: 0x404040)
         self.selectedBackgroundColor = UIColor.init(rgb: 0x3a3a3a)
         self.photoBackgroundColor = UIColor.init(rgb: 0x555555)

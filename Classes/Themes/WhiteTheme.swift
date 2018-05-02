@@ -15,6 +15,7 @@ class WhiteTheme : Theme {
         self.headingColor = UIColor.init(rgb: 0x444444)
         self.textColor = UIColor.init(rgb: 0x595959)
         self.buttonColor = UIColor.init(rgb: 0x1897D2)
+        self.usernameButtonColor = UIColor.init(rgb: 0x484848)
         self.backgroundColor = UIColor.init(rgb: 0xFFFFFF)
         self.selectedBackgroundColor = UIColor.init(rgb: 0xededed)
         self.photoBackgroundColor = UIColor.init(rgb: 0xf6f6f6)
