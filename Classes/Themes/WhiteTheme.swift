@@ -16,8 +16,8 @@ class WhiteTheme : Theme {
         self.textColor = UIColor.init(rgb: 0x595959)
         self.buttonColor = UIColor.init(rgb: 0x1897D2)
         self.backgroundColor = UIColor.init(rgb: 0xFFFFFF)
-        self.selectedBackgroundColor = UIColor.init(rgb: 0xfbfbfb)
-        self.photoBackgroundcolor = UIColor.init(rgb: 0xf6f6f6)
+        self.selectedBackgroundColor = UIColor.init(rgb: 0xededed)
+        self.photoBackgroundColor = UIColor.init(rgb: 0xf6f6f6)
         self.fontName = "Museo-500"
         self.statusBarStyle = UIStatusBarStyle.default
         self.navigationBarStyle = UIBarStyle.default

@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         // Load up the tab bar from the XIB, which means we can use the appearance proxy on its tab bar and the bar items.
         self.tabBarController = Bundle.main.loadNibNamed("TabBar", owner: self, options: nil)![0] as! UITabBarController
         self.tabBarController.delegate = self
+        
         self.loadBrowseTab(self.tabBarController.viewControllers![0] as! UINavigationController)
         self.loadSettingsTab(self.tabBarController.viewControllers![1] as! UINavigationController)
             
@@ -30,6 +31,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         
         // Set the inital theme.
         self.switchTheme("White")
+        
+        /*UIFont.familyNames.forEach({ familyName in
+            let fontNames = UIFont.fontNames(forFamilyName: familyName)
+            print(familyName, fontNames)
+        })*/
         
         return true
     }

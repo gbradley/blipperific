@@ -41,6 +41,8 @@
 		<string>Roboto-Regular.ttf</string>
 		<string>Roboto-LightItalic.ttf</string>
 		<string>Roboto-Bold.ttf</string>
+		<string>FontAwesomeFreeSolid.otf</string>
+		<string>FontAwesomeFreeRegular.otf</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

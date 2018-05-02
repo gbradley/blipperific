@@ -17,7 +17,7 @@ class RetroTheme : Theme {
         self.buttonColor = UIColor.init(rgb: 0xebdfac)
         self.backgroundColor = UIColor.init(rgb: 0x404040)
         self.selectedBackgroundColor = UIColor.init(rgb: 0x3a3a3a)
-        self.photoBackgroundcolor = UIColor.init(rgb: 0x555555)
+        self.photoBackgroundColor = UIColor.init(rgb: 0x555555)
         self.fontName = "Georgia"
         self.statusBarStyle = UIStatusBarStyle.lightContent
         self.navigationBarStyle = UIBarStyle.blackTranslucent

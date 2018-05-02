@@ -1,5 +1,5 @@
 //
-//  BrowseTableCell.swift
+//  BrowseTableViewCell.swift
 //  Blipperific
 //
 //  Created by Graham on 26/04/2018.
@@ -8,14 +8,13 @@
 
 import UIKit
 
-class BrowseTableCell : UITableViewCell {
+class BrowseTableViewCell : UITableViewCell {
     
     @IBOutlet var label : UILabel!
     @IBOutlet private var entryCollectionView : UICollectionView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.selectionStyle = UITableViewCellSelectionStyle.none
     }
     
     var collectionViewOffset: CGFloat {
@@ -33,6 +32,15 @@ class BrowseTableCell : UITableViewCell {
         entryCollectionView.dataSource = dataSourceDelegate
         entryCollectionView.tag = row
         entryCollectionView.reloadData()
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Switching themes + selected cells can cause issues with bbackgrounds, so reset it here.
+        if (!selected) {
+            entryCollectionView.backgroundColor = UIColor.clear
+        }
     }
     
 }

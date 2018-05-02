@@ -12,13 +12,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BrowseTableCell" customModule="Blipperific" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BrowseTableViewCell" customModule="Blipperific" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="195"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="78m-cz-w5A">
                     <rect key="frame" x="0.0" y="40" width="320" height="150"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="150" id="tFG-UN-VRI"/>
                     </constraints>
@@ -35,15 +34,25 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7m-Fv-XoI" customClass="DisclosureButton" customModule="Blipperific" customModuleProvider="target">
+                    <rect key="frame" x="303" y="18" width="7" height="10"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="7" id="b4g-0f-tQe"/>
+                        <constraint firstAttribute="height" constant="10" id="tjr-XX-OR9"/>
+                    </constraints>
+                    <state key="normal" image="ForwardArrow"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="78m-cz-w5A" firstAttribute="top" secondItem="U7m-Fv-XoI" secondAttribute="bottom" constant="12" id="8Dp-Fj-vsF"/>
                 <constraint firstItem="KWL-VV-RGh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="LPL-7Q-gqp"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="78m-cz-w5A" secondAttribute="bottom" constant="5" id="QID-qo-PN3"/>
                 <constraint firstItem="KWL-VV-RGh" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="piO-Lw-zyj"/>
                 <constraint firstItem="78m-cz-w5A" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="pz8-mq-lsg"/>
                 <constraint firstItem="78m-cz-w5A" firstAttribute="top" secondItem="KWL-VV-RGh" secondAttribute="bottom" constant="5" id="qRP-QC-ncL"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="78m-cz-w5A" secondAttribute="trailing" id="sGo-tF-hAX"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="U7m-Fv-XoI" secondAttribute="trailing" constant="10" id="zVo-0H-BLn"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
@@ -56,4 +65,7 @@
             <point key="canvasLocation" x="2" y="-255.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="ForwardArrow" width="12" height="20"/>
+    </resources>
 </document>

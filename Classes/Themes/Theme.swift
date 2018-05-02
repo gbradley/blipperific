@@ -15,12 +15,14 @@ class Theme {
     var buttonColor : UIColor!
     var backgroundColor : UIColor!
     var selectedBackgroundColor : UIColor!
-    var photoBackgroundcolor : UIColor!
+    var photoBackgroundColor : UIColor!
     var fontName : String!
     var statusBarStyle : UIStatusBarStyle!
     var navigationBarStyle : UIBarStyle!
     var tabBarTintColor : UIColor!
     var tabBarStyle : UIBarStyle!
+    
+    static var current : Theme?
     
     required init() {
     }
@@ -33,6 +35,7 @@ class Theme {
     
     // Apply the theme.
     func apply() {
+        Theme.current = self
         self.setAppearance()
         self.redraw()
     }
@@ -42,12 +45,12 @@ class Theme {
         
         // Set default background colors.
         TemplateView.appearance().backgroundColor = self.backgroundColor
-        PhotoBackgroundView.appearance().backgroundColor = self.photoBackgroundcolor
         UITableView.appearance().backgroundColor = self.backgroundColor
         UITableViewCell.appearance().backgroundColor = self.backgroundColor
+        PhotoBackgroundView.appearance().backgroundColor = self.photoBackgroundColor
+        DisclosureButton.appearance().tintColor = self.buttonColor
         
-        // Set bakgrond of selected table cells.
-        // set up your background color view
+        // Set backgrond of selected table cells.
         let backgroundView = UIView()
         backgroundView.backgroundColor = self.selectedBackgroundColor
         UITableViewCell.appearance().selectedBackgroundView = backgroundView
@@ -85,10 +88,18 @@ class Theme {
         let labelAppearance = UILabel.appearance()
         labelAppearance.textColor = self.textColor
         labelAppearance.font = UIFont(name: self.fontName, size: 14.0)
+        StatisticLabel.appearance().font = UIFont(name: self.fontName, size: 12.0)
         
         // Set appearance for buttons.
-        UILabel.appearance(whenContainedInInstancesOf: [UIButton.self]).font = UIFont(name: self.fontName, size: 17.0)
+        UILabel.appearance(whenContainedInInstancesOf: [UIButton.self]).font = self.buttonFont()
         UIButton.appearance().setTitleColor(self.buttonColor, for:.normal)
+        UIButton.appearance().setTitleColor(self.textColor, for:.disabled)
+        UIButton.appearance().tintColor = self.buttonColor
+        
+        StatisticButton.appearance().setTitleColor(self.textColor, for:.normal)
+        StatisticButton.appearance().setTitleColor(self.buttonColor, for: .highlighted)
+        StatisticButton.appearance().setTitleColor(self.buttonColor, for: .selected)
+        StatisticButton.appearance().setTitleColor(self.buttonColor, for: [.highlighted, .selected])
         
         // Set appearance for tab bar items.
         UITabBar.appearance().tintColor = self.tabBarTintColor
@@ -99,17 +110,29 @@ class Theme {
         UICollectionView.appearance().backgroundColor = self.backgroundColor
     }
     
+    /* Expose methods that are needed by components when having to update themselves. */
+    
+    func buttonFont() -> UIFont {
+        return UIFont(name: self.fontName, size: 17.0)!
+    }
+    
+    func backButtonFont() -> UIFont {
+        return UIFont(name: self.fontName, size: 14.0)!
+    }
+    
     // Force the app to redraw using the most recent appearance.
     private func redraw() {
         
         let windows = UIApplication.shared.windows
         for window in windows {
+            
             for view in window.subviews {
                 view.removeFromSuperview()
                 window.addSubview(view)
             }
         }
         
+        NotificationCenter.default.post(name: .themeWasApplied, object: nil, userInfo: ["theme" : self])
     }
 
 }

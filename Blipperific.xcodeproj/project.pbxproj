@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF2CCCCD209A045F004598B8 /* StatisticButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2CCCCC209A045F004598B8 /* StatisticButton.swift */; };
+		BF2CCCCF209A2BF5004598B8 /* Int+Abbreviation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2CCCCE209A2BF5004598B8 /* Int+Abbreviation.swift */; };
 		BF4B333F2090F716000262F8 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B333E2090F716000262F8 /* UIColor+Hex.swift */; };
 		BF4B33412090FA6B000262F8 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B33402090FA6B000262F8 /* Theme.swift */; };
 		BF4B33432090FADC000262F8 /* WhiteTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B33422090FADB000262F8 /* WhiteTheme.swift */; };
@@ -15,15 +17,23 @@
 		BF4B334E2091242F000262F8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B334D2091242F000262F8 /* SettingsViewController.swift */; };
 		BF4B3350209124B7000262F8 /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4B334F209124B7000262F8 /* SettingsView.xib */; };
 		BF4B33782091B0EA000262F8 /* TabBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4B33772091B0EA000262F8 /* TabBar.xib */; };
-		BF4B33802091CA3F000262F8 /* BrowseTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4B337F2091CA3F000262F8 /* BrowseTableCell.xib */; };
-		BF4B33822091CA4E000262F8 /* BrowseTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B33812091CA4E000262F8 /* BrowseTableCell.swift */; };
+		BF4B33802091CA3F000262F8 /* BrowseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4B337F2091CA3F000262F8 /* BrowseTableViewCell.xib */; };
+		BF4B33822091CA4E000262F8 /* BrowseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B33812091CA4E000262F8 /* BrowseTableViewCell.swift */; };
 		BF4B33862091D04E000262F8 /* EntryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4B33852091D04E000262F8 /* EntryCollectionViewCell.xib */; };
 		BF4B33882091D06E000262F8 /* EntryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B33872091D06E000262F8 /* EntryCollectionViewCell.swift */; };
 		BF4B338A20923B4A000262F8 /* EntryStreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B338920923B4A000262F8 /* EntryStreamViewController.swift */; };
 		BF4B338C20923B71000262F8 /* EntryStreamView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4B338B20923B71000262F8 /* EntryStreamView.xib */; };
-		BF4B338E20924380000262F8 /* EntryTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B338D20924380000262F8 /* EntryTableCell.swift */; };
-		BF4B3390209243B3000262F8 /* EntryTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4B338F209243B3000262F8 /* EntryTableCell.xib */; };
+		BF4B338E20924380000262F8 /* EntryStreamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B338D20924380000262F8 /* EntryStreamTableViewCell.swift */; };
+		BF4B3390209243B3000262F8 /* EntryStreamTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF4B338F209243B3000262F8 /* EntryStreamTableViewCell.xib */; };
 		BF4B339220924C0D000262F8 /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B339120924C0D000262F8 /* TitleLabel.swift */; };
+		BF56B1502099335C00BFF4EC /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF56B14F2099335C00BFF4EC /* Notification.swift */; };
+		BF56B15C2099B7AD00BFF4EC /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF56B15B2099B7AD00BFF4EC /* BackButton.swift */; };
+		BF56B15E2099C51600BFF4EC /* BackButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF56B15D2099C51600BFF4EC /* BackButton.xib */; };
+		BF56B1602099D97F00BFF4EC /* UIViewController+BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF56B15F2099D97F00BFF4EC /* UIViewController+BackButton.swift */; };
+		BF56B1622099E7EA00BFF4EC /* FontAwesomeFreeSolid.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF56B1612099E7EA00BFF4EC /* FontAwesomeFreeSolid.otf */; };
+		BF56B1642099EB2500BFF4EC /* StatisticLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF56B1632099EB2500BFF4EC /* StatisticLabel.swift */; };
+		BF56B1682099EEF800BFF4EC /* FontAwesomeFreeRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF56B1672099EEF800BFF4EC /* FontAwesomeFreeRegular.otf */; };
+		BF5AA3A420933EAA00FFFF57 /* DisclosureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5AA3A320933EAA00FFFF57 /* DisclosureButton.swift */; };
 		BF7C3D9A2090D28500DF0689 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7C3D992090D28500DF0689 /* AppDelegate.swift */; };
 		BF7C3D9C2090D28500DF0689 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7C3D9B2090D28500DF0689 /* BrowseViewController.swift */; };
 		BF7C3DA12090D28700DF0689 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF7C3DA02090D28700DF0689 /* Assets.xcassets */; };
@@ -52,6 +62,8 @@
 /* Begin PBXFileReference section */
 		4219FDA7C6B0C81F8F10A2E4 /* Pods-Blipperific.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blipperific.release.xcconfig"; path = "Pods/Target Support Files/Pods-Blipperific/Pods-Blipperific.release.xcconfig"; sourceTree = "<group>"; };
 		57111022F5883FA3C2677ABD /* Pods-Blipperific.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blipperific.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Blipperific/Pods-Blipperific.debug.xcconfig"; sourceTree = "<group>"; };
+		BF2CCCCC209A045F004598B8 /* StatisticButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticButton.swift; sourceTree = "<group>"; };
+		BF2CCCCE209A2BF5004598B8 /* Int+Abbreviation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Abbreviation.swift"; sourceTree = "<group>"; };
 		BF4B333E2090F716000262F8 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		BF4B33402090FA6B000262F8 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		BF4B33422090FADB000262F8 /* WhiteTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteTheme.swift; sourceTree = "<group>"; };
@@ -60,15 +72,23 @@
 		BF4B334D2091242F000262F8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		BF4B334F209124B7000262F8 /* SettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
 		BF4B33772091B0EA000262F8 /* TabBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBar.xib; sourceTree = "<group>"; };
-		BF4B337F2091CA3F000262F8 /* BrowseTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrowseTableCell.xib; sourceTree = "<group>"; };
-		BF4B33812091CA4E000262F8 /* BrowseTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseTableCell.swift; sourceTree = "<group>"; };
+		BF4B337F2091CA3F000262F8 /* BrowseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrowseTableViewCell.xib; sourceTree = "<group>"; };
+		BF4B33812091CA4E000262F8 /* BrowseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseTableViewCell.swift; sourceTree = "<group>"; };
 		BF4B33852091D04E000262F8 /* EntryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryCollectionViewCell.xib; sourceTree = "<group>"; };
 		BF4B33872091D06E000262F8 /* EntryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCollectionViewCell.swift; sourceTree = "<group>"; };
 		BF4B338920923B4A000262F8 /* EntryStreamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryStreamViewController.swift; sourceTree = "<group>"; };
 		BF4B338B20923B71000262F8 /* EntryStreamView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryStreamView.xib; sourceTree = "<group>"; };
-		BF4B338D20924380000262F8 /* EntryTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableCell.swift; sourceTree = "<group>"; };
-		BF4B338F209243B3000262F8 /* EntryTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryTableCell.xib; sourceTree = "<group>"; };
+		BF4B338D20924380000262F8 /* EntryStreamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryStreamTableViewCell.swift; sourceTree = "<group>"; };
+		BF4B338F209243B3000262F8 /* EntryStreamTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryStreamTableViewCell.xib; sourceTree = "<group>"; };
 		BF4B339120924C0D000262F8 /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
+		BF56B14F2099335C00BFF4EC /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Notification.swift; path = Extensions/Notification.swift; sourceTree = SOURCE_ROOT; };
+		BF56B15B2099B7AD00BFF4EC /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		BF56B15D2099C51600BFF4EC /* BackButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BackButton.xib; sourceTree = "<group>"; };
+		BF56B15F2099D97F00BFF4EC /* UIViewController+BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+BackButton.swift"; sourceTree = "<group>"; };
+		BF56B1612099E7EA00BFF4EC /* FontAwesomeFreeSolid.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesomeFreeSolid.otf; sourceTree = "<group>"; };
+		BF56B1632099EB2500BFF4EC /* StatisticLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticLabel.swift; sourceTree = "<group>"; };
+		BF56B1672099EEF800BFF4EC /* FontAwesomeFreeRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesomeFreeRegular.otf; sourceTree = "<group>"; };
+		BF5AA3A320933EAA00FFFF57 /* DisclosureButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclosureButton.swift; sourceTree = "<group>"; };
 		BF7C3D962090D28500DF0689 /* Blipperific.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blipperific.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF7C3D992090D28500DF0689 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF7C3D9B2090D28500DF0689 /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +169,9 @@
 			isa = PBXGroup;
 			children = (
 				BF4B333E2090F716000262F8 /* UIColor+Hex.swift */,
+				BF56B14F2099335C00BFF4EC /* Notification.swift */,
+				BF56B15F2099D97F00BFF4EC /* UIViewController+BackButton.swift */,
+				BF2CCCCE209A2BF5004598B8 /* Int+Abbreviation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -156,8 +179,8 @@
 		BF4B33792091C69C000262F8 /* Tables */ = {
 			isa = PBXGroup;
 			children = (
-				BF4B338F209243B3000262F8 /* EntryTableCell.xib */,
-				BF4B337F2091CA3F000262F8 /* BrowseTableCell.xib */,
+				BF4B338F209243B3000262F8 /* EntryStreamTableViewCell.xib */,
+				BF4B337F2091CA3F000262F8 /* BrowseTableViewCell.xib */,
 				BF4B33852091D04E000262F8 /* EntryCollectionViewCell.xib */,
 			);
 			path = Tables;
@@ -166,8 +189,8 @@
 		BF4B337E2091CA1C000262F8 /* Tables */ = {
 			isa = PBXGroup;
 			children = (
-				BF4B33812091CA4E000262F8 /* BrowseTableCell.swift */,
-				BF4B338D20924380000262F8 /* EntryTableCell.swift */,
+				BF4B33812091CA4E000262F8 /* BrowseTableViewCell.swift */,
+				BF4B338D20924380000262F8 /* EntryStreamTableViewCell.swift */,
 				BF4B33872091D06E000262F8 /* EntryCollectionViewCell.swift */,
 			);
 			path = Tables;
@@ -222,6 +245,10 @@
 				BF4B337E2091CA1C000262F8 /* Tables */,
 				BF4B334820910271000262F8 /* HeadingLabel.swift */,
 				BF4B339120924C0D000262F8 /* TitleLabel.swift */,
+				BF5AA3A320933EAA00FFFF57 /* DisclosureButton.swift */,
+				BF56B15B2099B7AD00BFF4EC /* BackButton.swift */,
+				BF56B1632099EB2500BFF4EC /* StatisticLabel.swift */,
+				BF2CCCCC209A045F004598B8 /* StatisticButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -241,6 +268,7 @@
 			children = (
 				BF7C3DAB2090D3C200DF0689 /* BrowseView.xib */,
 				BF4B334F209124B7000262F8 /* SettingsView.xib */,
+				BF56B15D2099C51600BFF4EC /* BackButton.xib */,
 				BF4B33772091B0EA000262F8 /* TabBar.xib */,
 				BF4B338B20923B71000262F8 /* EntryStreamView.xib */,
 				BF4B33792091C69C000262F8 /* Tables */,
@@ -261,6 +289,8 @@
 			isa = PBXGroup;
 			children = (
 				BF9F358E2090E81300355585 /* Museo500-Regular.otf */,
+				BF56B1672099EEF800BFF4EC /* FontAwesomeFreeRegular.otf */,
+				BF56B1612099E7EA00BFF4EC /* FontAwesomeFreeSolid.otf */,
 				BF9F358F2090E81300355585 /* Roboto */,
 			);
 			path = Fonts;
@@ -348,23 +378,26 @@
 			files = (
 				BF9F35A92090E81300355585 /* Roboto-Thin.ttf in Resources */,
 				BF9F359E2090E81300355585 /* Roboto-Medium.ttf in Resources */,
+				BF56B15E2099C51600BFF4EC /* BackButton.xib in Resources */,
 				BF9F35A52090E81300355585 /* Roboto-Italic.ttf in Resources */,
 				BF9F35A82090E81300355585 /* Roboto-Bold.ttf in Resources */,
 				BF9F35A42090E81300355585 /* Roboto-LightItalic.ttf in Resources */,
 				BF9F35AA2090E81300355585 /* Roboto-Black.ttf in Resources */,
+				BF56B1682099EEF800BFF4EC /* FontAwesomeFreeRegular.otf in Resources */,
 				BF4B33782091B0EA000262F8 /* TabBar.xib in Resources */,
 				BF9F35A72090E81300355585 /* Roboto-BlackItalic.ttf in Resources */,
 				BF4B33862091D04E000262F8 /* EntryCollectionViewCell.xib in Resources */,
-				BF4B3390209243B3000262F8 /* EntryTableCell.xib in Resources */,
+				BF4B3390209243B3000262F8 /* EntryStreamTableViewCell.xib in Resources */,
 				BF9F35A02090E81300355585 /* Roboto-Regular.ttf in Resources */,
 				BF9F359D2090E81300355585 /* Museo500-Regular.otf in Resources */,
 				BF9F35A62090E81300355585 /* LICENSE.txt in Resources */,
 				BF4B338C20923B71000262F8 /* EntryStreamView.xib in Resources */,
 				BF9F359F2090E81300355585 /* Roboto-Light.ttf in Resources */,
 				BF9F35A12090E81300355585 /* Roboto-MediumItalic.ttf in Resources */,
+				BF56B1622099E7EA00BFF4EC /* FontAwesomeFreeSolid.otf in Resources */,
 				BF7C3DA42090D28700DF0689 /* LaunchScreen.storyboard in Resources */,
 				BF9F35A22090E81300355585 /* Roboto-ThinItalic.ttf in Resources */,
-				BF4B33802091CA3F000262F8 /* BrowseTableCell.xib in Resources */,
+				BF4B33802091CA3F000262F8 /* BrowseTableViewCell.xib in Resources */,
 				BF7C3DAC2090D3C200DF0689 /* BrowseView.xib in Resources */,
 				BF4B3350209124B7000262F8 /* SettingsView.xib in Resources */,
 				BF9F35A32090E81300355585 /* Roboto-BoldItalic.ttf in Resources */,
@@ -420,19 +453,26 @@
 			files = (
 				BF7C3D9C2090D28500DF0689 /* BrowseViewController.swift in Sources */,
 				BF4B33432090FADC000262F8 /* WhiteTheme.swift in Sources */,
+				BF56B1502099335C00BFF4EC /* Notification.swift in Sources */,
 				BF4B33452090FC6A000262F8 /* RetroTheme.swift in Sources */,
 				BF4B339220924C0D000262F8 /* TitleLabel.swift in Sources */,
-				BF4B338E20924380000262F8 /* EntryTableCell.swift in Sources */,
+				BF56B15C2099B7AD00BFF4EC /* BackButton.swift in Sources */,
+				BF4B338E20924380000262F8 /* EntryStreamTableViewCell.swift in Sources */,
 				BF4B333F2090F716000262F8 /* UIColor+Hex.swift in Sources */,
 				BF8B4DD02093116B00BAD163 /* Entry.swift in Sources */,
-				BF4B33822091CA4E000262F8 /* BrowseTableCell.swift in Sources */,
+				BF56B1642099EB2500BFF4EC /* StatisticLabel.swift in Sources */,
+				BF4B33822091CA4E000262F8 /* BrowseTableViewCell.swift in Sources */,
 				BF4B33412090FA6B000262F8 /* Theme.swift in Sources */,
+				BF2CCCCD209A045F004598B8 /* StatisticButton.swift in Sources */,
 				BF4B334920910271000262F8 /* HeadingLabel.swift in Sources */,
 				BF8B4DCE20930BCF00BAD163 /* PhotoBackgroundView.swift in Sources */,
 				BF4B338A20923B4A000262F8 /* EntryStreamViewController.swift in Sources */,
 				BF7C3D9A2090D28500DF0689 /* AppDelegate.swift in Sources */,
+				BF56B1602099D97F00BFF4EC /* UIViewController+BackButton.swift in Sources */,
 				BF9F358B2090E33200355585 /* TemplateView.swift in Sources */,
 				BF4B33882091D06E000262F8 /* EntryCollectionViewCell.swift in Sources */,
+				BF5AA3A420933EAA00FFFF57 /* DisclosureButton.swift in Sources */,
+				BF2CCCCF209A2BF5004598B8 /* Int+Abbreviation.swift in Sources */,
 				BF4B334E2091242F000262F8 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
