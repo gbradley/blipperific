@@ -13,7 +13,13 @@ class EntryStreamViewController : UIViewController, UITableViewDelegate, UITable
     
     @IBOutlet var entryTableView : UITableView!
     
+    var shouldFetchMoreEntries : Bool! = true
     var entryResponses : [EntryResponse]
+    
+    private enum SECTION : Int {
+        case Entries = 0
+        case Pagination = 1
+    }
     
     init(nibName nibNameOrNil: String?, entryResponses: [EntryResponse], bundle nibBundleOrNil: Bundle?) {
         self.entryResponses = entryResponses
@@ -30,102 +36,91 @@ class EntryStreamViewController : UIViewController, UITableViewDelegate, UITable
         
         self.additionalSafeAreaInsets = UIEdgeInsets(top: 6, left: 0, bottom: 1, right: 0)
         entryTableView.register(UINib(nibName: "EntryStreamTableViewCell", bundle:nil), forCellReuseIdentifier: "EntryStreamTableViewCell")
+        entryTableView.register(UINib(nibName: "EntryStreamPaginationViewCell", bundle:nil), forCellReuseIdentifier: "EntryStreamPaginationViewCell")
+        
+        // Hook up refresh control.
+        entryTableView.refreshControl = UIRefreshControl()
+        entryTableView.refreshControl?.addTarget(self, action: #selector(self.refreshEntries), for: .valueChanged)
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1 + (shouldFetchMoreEntries ? 1 : 0);
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return entryResponses.count
+        var count : Int = 0
+        if (section == SECTION.Entries.rawValue) {
+            count = entryResponses.count
+        } else if (section == SECTION.Pagination.rawValue) {
+            count = 1
+        }
+        return count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        // Determine the height based on the image's aspect ratio and the margins.
-        let width = self.view.frame.size.width - 10
-        let aspectRatio = entryResponses[indexPath.row].entry.image_aspect_ratio
-        let height = 40 + ((1.0 / CGFloat(aspectRatio!)) * width)
+        var height : CGFloat!
+        if (indexPath.section == SECTION.Entries.rawValue) {
+            // Determine the height based on the image's aspect ratio and the margins.
+            let width = self.view.frame.size.width - 10
+            let aspectRatio = entryResponses[indexPath.row].entry.image_aspect_ratio
+            height = 40 + ((1.0 / CGFloat(aspectRatio!)) * width)
+        } else if (indexPath.section == SECTION.Pagination.rawValue) {
+            height = 30
+        }
         return height
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let cell : EntryStreamTableViewCell = entryTableView!.dequeueReusableCell(withIdentifier: "EntryStreamTableViewCell")! as! EntryStreamTableViewCell
-        let entryResponse = entryResponses[indexPath.row]
-        let entry = entryResponse.entry
         
-        let url = URL(string: (entry.image_url))!
-        
-        // Configure the image and its labels.
-        cell.mainImageView.sd_setImage(with: url, for: .normal)
-        cell.usernameButton.setTitle(entry.username, for: .normal)
-        cell.titleLabel.text = entry.title
-        
-        // Configure the counts.
-        if let details = entryResponse.details {
-            cell.viewCountLabel.text = details.views["total"]!.abbrevation()
-            
-            cell.starCountLabel.text = details.stars["total"]!.abbrevation()
-            cell.starCountLabel.isUserInteractionEnabled = false
-            cell.starButton.isHighlighted = true
-            cell.starButton.isSelected = details.stars["starred"] == 1
-            
-            cell.favouriteCountLabel.text = details.favourites["total"]!.abbrevation()
-            cell.favouriteCountLabel.isUserInteractionEnabled = false
-            cell.favouriteButton.isHighlighted = true
-            cell.favouriteButton.isSelected = details.favourites["favourited"] == 1
-            
-            cell.commentCountLabel.text = details.comments["total"]!.abbrevation()
-            cell.commentCountLabel.isUserInteractionEnabled = false
-            cell.commentButton.isHighlighted = true
-            cell.commentButton.isSelected = false
-            
-            cell.commentCountLabel.text = ""
-        } else {
-            cell.viewCountLabel.text = ""
-
-            cell.starCountLabel.text = ""
-            cell.starCountLabel.isUserInteractionEnabled = true
-
-            cell.favouriteCountLabel.text = ""
-            cell.favouriteCountLabel.isUserInteractionEnabled = true
-            
-            cell.commentCountLabel.text = ""
-            cell.favouriteCountLabel.isUserInteractionEnabled = true
-            
-            cell.starButton.isSelected = false
-            cell.starButton.isHighlighted = false
-            
-            cell.favouriteButton.isSelected = false
-            cell.favouriteButton.isHighlighted = false
-            
-            cell.commentButton.isSelected = false
-            cell.commentButton.isHighlighted = false
+        var cell : UITableViewCell!
+        if (indexPath.section == SECTION.Entries.rawValue) {
+            cell = self.cellForEntryAt(indexPath)
+        } else if (indexPath.section == SECTION.Pagination.rawValue) {
+            cell = entryTableView!.dequeueReusableCell(withIdentifier: "EntryStreamPaginationViewCell")!
+            cell.selectionStyle = .none
         }
-        
+        return cell
+    }
+    
+    private func cellForEntryAt(_ indexPath : IndexPath) -> EntryStreamTableViewCell {
+        let cell = entryTableView!.dequeueReusableCell(withIdentifier: "EntryStreamTableViewCell")! as! EntryStreamTableViewCell
+        let entryResponse = entryResponses[indexPath.row]
+        cell.configureFor(entryResponse)
         cell.delegate = self
-        
         return cell
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        let cell = tableView.cellForRow(at: indexPath)
-        
-        // Deselect the cell if it is already selected.
-        if (cell?.isSelected)! {
-            tableView.deselectRow(at: indexPath, animated: false)
-            return nil
-        } else {
+        var path : IndexPath?
+        if (indexPath.section == SECTION.Entries.rawValue) {
+            let cell = tableView.cellForRow(at: indexPath)
             
-            // Load up details - this would trigger an ajax call and reload asynchronously.
-            var entryResponse = entryResponses[indexPath.row]
-            if (entryResponse.details == nil) {
-                let details = EntryDetails()
-                entryResponse.details = details
-                entryResponses[indexPath.row] = entryResponse
-                tableView.reloadRows(at: [indexPath], with: .none)
+            // Deselect the cell if it is already selected.
+            if (cell?.isSelected)! {
+                tableView.deselectRow(at: indexPath, animated: false)
+            } else {
+                
+                // Load up details - this would trigger an ajax call and reload asynchronously.
+                var entryResponse = entryResponses[indexPath.row]
+                if (entryResponse.details == nil) {
+                    let details = EntryDetails()
+                    entryResponse.details = details
+                    entryResponses[indexPath.row] = entryResponse
+                    
+                    // Pretend this in an ajax call.
+                    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+                        if let cell = tableView.cellForRow(at: indexPath) {
+                            (cell as! EntryStreamTableViewCell).configureFor(entryResponse)
+                        }
+                    }
+                }
             }
+            path = indexPath
         }
-        return indexPath
+        return path
     }
-    
+
     // Table cell delegate
     func entryStreamTableViewCell(_ cell: EntryStreamTableViewCell, didTriggerAction action: String) {
         
@@ -136,6 +131,15 @@ class EntryStreamViewController : UIViewController, UITableViewDelegate, UITable
                     entryTableView.deselectRow(at: indexPath, animated: false)
                 }
             }
+        }
+    }
+    
+    // Refresh contol
+    
+    @objc func refreshEntries() {
+        // Pretend this in an ajax call.
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.entryTableView.refreshControl?.endRefreshing()
         }
     }
     

@@ -113,6 +113,10 @@ class Theme {
         
         // Set appearance for collection views.
         UICollectionView.appearance().backgroundColor = self.backgroundColor
+        
+        // Set appearance for refresh / activity controls.
+        UIRefreshControl.appearance().tintColor = self.buttonColor
+        UIActivityIndicatorView.appearance().color = self.buttonColor
     }
     
     /* Expose methods that are needed by components when having to update themselves. */

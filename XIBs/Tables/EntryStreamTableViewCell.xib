@@ -35,14 +35,15 @@
                                     <action selector="actionButtonTapped:" destination="Ccl-7F-46u" eventType="touchUpInside" id="Gcb-jf-Qb8"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" text="THE WHITE PONY This is a really long title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="G6a-bJ-Dae" customClass="TitleLabel" customModule="Blipperific" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="252" text="THE WHITE PONY This is a really long title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="G6a-bJ-Dae" customClass="TitleLabel" customModule="Blipperific" customModuleProvider="target">
                                 <rect key="frame" x="5" y="280" width="291" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nnF-cq-nRc" customClass="UsernameButton" customModule="Blipperific" customModuleProvider="target">
-                                <rect key="frame" x="316" y="280" width="54" height="20"/>
+                                <rect key="frame" x="316" y="275" width="54" height="35"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="3"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="actionButtonTapped:" destination="Ccl-7F-46u" eventType="touchUpInside" id="cXT-eO-4Km"/>
@@ -62,9 +63,9 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Sy-6t-C74" customClass="StatisticButton" customModule="Blipperific" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="35"/>
-                                                <fontDescription key="fontDescription" name="FontAwesome5FreeSolid" family="Font Awesome 5 Free" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="FontAwesome5FreeRegular" family="Font Awesome 5 Free" pointSize="17"/>
                                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                <state key="normal" title=""/>
+                                                <state key="normal" title=""/>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.85882352939999995" green="0.35294117650000001" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -257,15 +258,15 @@
                             <constraint firstItem="Sww-X5-Btl" firstAttribute="leading" secondItem="y9N-su-byv" secondAttribute="leading" constant="5" id="3Xg-iN-YhC"/>
                             <constraint firstAttribute="trailing" secondItem="fwZ-cF-zZT" secondAttribute="trailing" constant="5" id="CwN-gd-Rxv"/>
                             <constraint firstItem="fwZ-cF-zZT" firstAttribute="top" secondItem="y9N-su-byv" secondAttribute="top" constant="5" id="DFQ-Q0-ayA"/>
-                            <constraint firstItem="nnF-cq-nRc" firstAttribute="top" secondItem="fwZ-cF-zZT" secondAttribute="bottom" constant="10" id="E3L-Ly-emG"/>
                             <constraint firstAttribute="trailing" secondItem="nnF-cq-nRc" secondAttribute="trailing" constant="5" id="LdV-DW-UlM"/>
                             <constraint firstAttribute="bottom" secondItem="fwZ-cF-zZT" secondAttribute="bottom" constant="40" id="Mkg-Yf-LLA"/>
                             <constraint firstItem="nnF-cq-nRc" firstAttribute="leading" secondItem="G6a-bJ-Dae" secondAttribute="trailing" constant="20" id="QCS-sh-SHp"/>
                             <constraint firstItem="G6a-bJ-Dae" firstAttribute="leading" secondItem="y9N-su-byv" secondAttribute="leading" constant="5" id="Sd7-ni-tDX"/>
                             <constraint firstItem="fwZ-cF-zZT" firstAttribute="leading" secondItem="y9N-su-byv" secondAttribute="leading" constant="5" id="Sev-cQ-3Do"/>
                             <constraint firstAttribute="bottom" secondItem="Sww-X5-Btl" secondAttribute="bottom" id="Y9N-bY-ubk"/>
+                            <constraint firstItem="nnF-cq-nRc" firstAttribute="top" secondItem="fwZ-cF-zZT" secondAttribute="bottom" constant="5" id="bgb-y5-qY1"/>
                             <constraint firstAttribute="trailing" secondItem="Sww-X5-Btl" secondAttribute="trailing" constant="5" id="cCD-un-Zpi"/>
-                            <constraint firstAttribute="bottom" secondItem="nnF-cq-nRc" secondAttribute="bottom" constant="10" id="ioe-s2-CJ1"/>
+                            <constraint firstAttribute="bottom" secondItem="nnF-cq-nRc" secondAttribute="bottom" id="ioe-s2-CJ1"/>
                             <constraint firstItem="G6a-bJ-Dae" firstAttribute="top" secondItem="fwZ-cF-zZT" secondAttribute="bottom" constant="10" id="x28-Iw-HRN"/>
                         </constraints>
                     </view>

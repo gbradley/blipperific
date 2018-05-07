@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF29AD7B20A0EF22002DB4CE /* EntryStreamPaginationViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF29AD7A20A0EF22002DB4CE /* EntryStreamPaginationViewCell.xib */; };
+		BF29AD7F20A0F503002DB4CE /* FontAwesomeFreeRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF29AD7E20A0F502002DB4CE /* FontAwesomeFreeRegular.otf */; };
 		BF2CCCCD209A045F004598B8 /* StatisticButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2CCCCC209A045F004598B8 /* StatisticButton.swift */; };
 		BF2CCCCF209A2BF5004598B8 /* Int+Abbreviation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2CCCCE209A2BF5004598B8 /* Int+Abbreviation.swift */; };
 		BF2CCCD1209A5EB3004598B8 /* UsernameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2CCCD0209A5EB3004598B8 /* UsernameButton.swift */; };
@@ -33,7 +35,6 @@
 		BF56B1602099D97F00BFF4EC /* UIViewController+BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF56B15F2099D97F00BFF4EC /* UIViewController+BackButton.swift */; };
 		BF56B1622099E7EA00BFF4EC /* FontAwesomeFreeSolid.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF56B1612099E7EA00BFF4EC /* FontAwesomeFreeSolid.otf */; };
 		BF56B1642099EB2500BFF4EC /* StatisticLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF56B1632099EB2500BFF4EC /* StatisticLabel.swift */; };
-		BF56B1682099EEF800BFF4EC /* FontAwesomeFreeRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF56B1672099EEF800BFF4EC /* FontAwesomeFreeRegular.otf */; };
 		BF5AA3A420933EAA00FFFF57 /* DisclosureButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5AA3A320933EAA00FFFF57 /* DisclosureButton.swift */; };
 		BF7C3D9A2090D28500DF0689 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7C3D992090D28500DF0689 /* AppDelegate.swift */; };
 		BF7C3D9C2090D28500DF0689 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7C3D9B2090D28500DF0689 /* BrowseViewController.swift */; };
@@ -63,6 +64,8 @@
 /* Begin PBXFileReference section */
 		4219FDA7C6B0C81F8F10A2E4 /* Pods-Blipperific.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blipperific.release.xcconfig"; path = "Pods/Target Support Files/Pods-Blipperific/Pods-Blipperific.release.xcconfig"; sourceTree = "<group>"; };
 		57111022F5883FA3C2677ABD /* Pods-Blipperific.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blipperific.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Blipperific/Pods-Blipperific.debug.xcconfig"; sourceTree = "<group>"; };
+		BF29AD7A20A0EF22002DB4CE /* EntryStreamPaginationViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryStreamPaginationViewCell.xib; sourceTree = "<group>"; };
+		BF29AD7E20A0F502002DB4CE /* FontAwesomeFreeRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesomeFreeRegular.otf; sourceTree = "<group>"; };
 		BF2CCCCC209A045F004598B8 /* StatisticButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticButton.swift; sourceTree = "<group>"; };
 		BF2CCCCE209A2BF5004598B8 /* Int+Abbreviation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Abbreviation.swift"; sourceTree = "<group>"; };
 		BF2CCCD0209A5EB3004598B8 /* UsernameButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameButton.swift; sourceTree = "<group>"; };
@@ -89,7 +92,6 @@
 		BF56B15F2099D97F00BFF4EC /* UIViewController+BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+BackButton.swift"; sourceTree = "<group>"; };
 		BF56B1612099E7EA00BFF4EC /* FontAwesomeFreeSolid.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesomeFreeSolid.otf; sourceTree = "<group>"; };
 		BF56B1632099EB2500BFF4EC /* StatisticLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticLabel.swift; sourceTree = "<group>"; };
-		BF56B1672099EEF800BFF4EC /* FontAwesomeFreeRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesomeFreeRegular.otf; sourceTree = "<group>"; };
 		BF5AA3A320933EAA00FFFF57 /* DisclosureButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisclosureButton.swift; sourceTree = "<group>"; };
 		BF7C3D962090D28500DF0689 /* Blipperific.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blipperific.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF7C3D992090D28500DF0689 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				BF4B338F209243B3000262F8 /* EntryStreamTableViewCell.xib */,
+				BF29AD7A20A0EF22002DB4CE /* EntryStreamPaginationViewCell.xib */,
 				BF4B337F2091CA3F000262F8 /* BrowseTableViewCell.xib */,
 				BF4B33852091D04E000262F8 /* EntryCollectionViewCell.xib */,
 			);
@@ -292,8 +295,8 @@
 			isa = PBXGroup;
 			children = (
 				BF9F358E2090E81300355585 /* Museo500-Regular.otf */,
-				BF56B1672099EEF800BFF4EC /* FontAwesomeFreeRegular.otf */,
 				BF56B1612099E7EA00BFF4EC /* FontAwesomeFreeSolid.otf */,
+				BF29AD7E20A0F502002DB4CE /* FontAwesomeFreeRegular.otf */,
 				BF9F358F2090E81300355585 /* Roboto */,
 			);
 			path = Fonts;
@@ -386,7 +389,6 @@
 				BF9F35A82090E81300355585 /* Roboto-Bold.ttf in Resources */,
 				BF9F35A42090E81300355585 /* Roboto-LightItalic.ttf in Resources */,
 				BF9F35AA2090E81300355585 /* Roboto-Black.ttf in Resources */,
-				BF56B1682099EEF800BFF4EC /* FontAwesomeFreeRegular.otf in Resources */,
 				BF4B33782091B0EA000262F8 /* TabBar.xib in Resources */,
 				BF9F35A72090E81300355585 /* Roboto-BlackItalic.ttf in Resources */,
 				BF4B33862091D04E000262F8 /* EntryCollectionViewCell.xib in Resources */,
@@ -394,6 +396,7 @@
 				BF9F35A02090E81300355585 /* Roboto-Regular.ttf in Resources */,
 				BF9F359D2090E81300355585 /* Museo500-Regular.otf in Resources */,
 				BF9F35A62090E81300355585 /* LICENSE.txt in Resources */,
+				BF29AD7F20A0F503002DB4CE /* FontAwesomeFreeRegular.otf in Resources */,
 				BF4B338C20923B71000262F8 /* EntryStreamView.xib in Resources */,
 				BF9F359F2090E81300355585 /* Roboto-Light.ttf in Resources */,
 				BF9F35A12090E81300355585 /* Roboto-MediumItalic.ttf in Resources */,
@@ -402,6 +405,7 @@
 				BF9F35A22090E81300355585 /* Roboto-ThinItalic.ttf in Resources */,
 				BF4B33802091CA3F000262F8 /* BrowseTableViewCell.xib in Resources */,
 				BF7C3DAC2090D3C200DF0689 /* BrowseView.xib in Resources */,
+				BF29AD7B20A0EF22002DB4CE /* EntryStreamPaginationViewCell.xib in Resources */,
 				BF4B3350209124B7000262F8 /* SettingsView.xib in Resources */,
 				BF9F35A32090E81300355585 /* Roboto-BoldItalic.ttf in Resources */,
 				BF7C3DA12090D28700DF0689 /* Assets.xcassets in Resources */,

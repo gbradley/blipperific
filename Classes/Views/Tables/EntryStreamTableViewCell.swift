@@ -50,6 +50,62 @@ class EntryStreamTableViewCell : UITableViewCell {
         contentView.frame = UIEdgeInsetsInsetRect(contentView.frame, UIEdgeInsetsMake(5, 5, 5, 5))
     }
     
+    // Configure the cell for an entry response.
+    func configureFor(_ entryResponse : EntryResponse) {
+        
+        let entry = entryResponse.entry
+        
+        let url = URL(string: (entry.image_url))!
+        
+        // Configure the image and its labels.
+        mainImageView.sd_setImage(with: url, for: .normal)
+        usernameButton.setTitle(entry.username, for: .normal)
+        titleLabel.text = entry.title
+        
+        // Configure the counts.
+        if let details = entryResponse.details {
+            viewCountLabel.text = details.views["total"]!.abbrevation()
+            
+            starCountLabel.text = details.stars["total"]!.abbrevation()
+            starCountLabel.isUserInteractionEnabled = false
+            starButton.isHighlighted = true
+            starButton.isSelected = details.stars["starred"] == 1
+            
+            favouriteCountLabel.text = details.favourites["total"]!.abbrevation()
+            favouriteCountLabel.isUserInteractionEnabled = false
+            favouriteButton.isHighlighted = true
+            favouriteButton.isSelected = details.favourites["favourited"] == 1
+            
+            commentCountLabel.text = details.comments["total"]!.abbrevation()
+            commentCountLabel.isUserInteractionEnabled = false
+            commentButton.isHighlighted = true
+            commentButton.isSelected = false
+            
+            commentCountLabel.text = ""
+        } else {
+            viewCountLabel.text = ""
+            
+            starCountLabel.text = ""
+            starCountLabel.isUserInteractionEnabled = true
+            
+            favouriteCountLabel.text = ""
+            favouriteCountLabel.isUserInteractionEnabled = true
+            
+            commentCountLabel.text = ""
+            favouriteCountLabel.isUserInteractionEnabled = true
+            
+            starButton.isSelected = false
+            starButton.isHighlighted = false
+            
+            favouriteButton.isSelected = false
+            favouriteButton.isHighlighted = false
+            
+            commentButton.isSelected = false
+            commentButton.isHighlighted = false
+        }
+        
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
