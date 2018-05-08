@@ -19,21 +19,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJi-tc-nQn">
-                        <rect key="frame" x="54" y="65" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lk2-vh-bb3">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                     </imageView>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="qJi-tc-nQn" firstAttribute="centerY" secondItem="MyQ-mU-lVw" secondAttribute="centerY" id="33X-NO-GX3"/>
                 <constraint firstAttribute="bottom" secondItem="Lk2-vh-bb3" secondAttribute="bottom" id="5BQ-EI-DC4"/>
-                <constraint firstItem="qJi-tc-nQn" firstAttribute="centerX" secondItem="MyQ-mU-lVw" secondAttribute="centerX" id="GL5-HE-eqb"/>
                 <constraint firstAttribute="trailing" secondItem="Lk2-vh-bb3" secondAttribute="trailing" id="Z7d-P9-U16"/>
                 <constraint firstItem="Lk2-vh-bb3" firstAttribute="leading" secondItem="MyQ-mU-lVw" secondAttribute="leading" id="nHr-Zo-ryx"/>
                 <constraint firstItem="Lk2-vh-bb3" firstAttribute="top" secondItem="MyQ-mU-lVw" secondAttribute="top" id="u9j-YX-yaw"/>

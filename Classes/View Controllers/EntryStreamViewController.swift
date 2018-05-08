@@ -9,14 +9,14 @@
 import UIKit
 import SDWebImage
 
-class EntryStreamViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, EntryStreamTableViewCellDelegate {
+class EntryStreamViewController : UIViewController, UITableViewDelegate, UIScrollViewDelegate, UITableViewDataSource, EntryStreamTableViewCellDelegate {
     
     @IBOutlet var entryTableView : UITableView!
     
     var shouldFetchMoreEntries : Bool! = true
     var entryResponses : [EntryResponse]
     
-    private enum SECTION : Int {
+    private enum Section : Int {
         case Entries = 0
         case Pagination = 1
     }
@@ -49,9 +49,9 @@ class EntryStreamViewController : UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var count : Int = 0
-        if (section == SECTION.Entries.rawValue) {
+        if (section == Section.Entries.rawValue) {
             count = entryResponses.count
-        } else if (section == SECTION.Pagination.rawValue) {
+        } else if (section == Section.Pagination.rawValue) {
             count = 1
         }
         return count
@@ -60,12 +60,12 @@ class EntryStreamViewController : UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         var height : CGFloat!
-        if (indexPath.section == SECTION.Entries.rawValue) {
+        if (indexPath.section == Section.Entries.rawValue) {
             // Determine the height based on the image's aspect ratio and the margins.
             let width = self.view.frame.size.width - 10
             let aspectRatio = entryResponses[indexPath.row].entry.image_aspect_ratio
             height = 40 + ((1.0 / CGFloat(aspectRatio!)) * width)
-        } else if (indexPath.section == SECTION.Pagination.rawValue) {
+        } else if (indexPath.section == Section.Pagination.rawValue) {
             height = 30
         }
         return height
@@ -74,9 +74,9 @@ class EntryStreamViewController : UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         var cell : UITableViewCell!
-        if (indexPath.section == SECTION.Entries.rawValue) {
+        if (indexPath.section == Section.Entries.rawValue) {
             cell = self.cellForEntryAt(indexPath)
-        } else if (indexPath.section == SECTION.Pagination.rawValue) {
+        } else if (indexPath.section == Section.Pagination.rawValue) {
             cell = entryTableView!.dequeueReusableCell(withIdentifier: "EntryStreamPaginationViewCell")!
             cell.selectionStyle = .none
         }
@@ -93,7 +93,7 @@ class EntryStreamViewController : UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         var path : IndexPath?
-        if (indexPath.section == SECTION.Entries.rawValue) {
+        if (indexPath.section == Section.Entries.rawValue) {
             let cell = tableView.cellForRow(at: indexPath)
             
             // Deselect the cell if it is already selected.
@@ -115,10 +115,20 @@ class EntryStreamViewController : UIViewController, UITableViewDelegate, UITable
                         }
                     }
                 }
+                path = indexPath
             }
-            path = indexPath
         }
         return path
+    }
+    
+    // Scroll view delegate
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        
+        // Deselect any selected cell when the user drags the table.
+        if let indexPath = entryTableView.indexPathForSelectedRow {
+            entryTableView.deselectRow(at: indexPath, animated: false)
+        }
     }
 
     // Table cell delegate
