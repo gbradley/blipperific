@@ -47,7 +47,6 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let jsonData = jsonString.data(using: .utf8)!
         let decoder = JSONDecoder()
         entryResponses = try! decoder.decode([EntryResponse].self, from: jsonData)
-        print(entryResponses.count)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -110,6 +109,13 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let url = URL(string: entryResponse.entry.thumbnail_url)!
         cell.primaryImageView.sd_setImage(with: url, placeholderImage:nil)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let entryViewController = EntryViewController(nibName: "EntryView", bundle: nil)
+        self.presentJournalController(entryViewController)
+        
     }
     
 }

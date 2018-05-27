@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         
         self.loadBrowseTab(self.tabBarController.viewControllers![0] as! UINavigationController)
         self.loadSettingsTab(self.tabBarController.viewControllers![1] as! UINavigationController)
+        self.loadTestTab(self.tabBarController.viewControllers![2] as! UINavigationController)
             
         window!.rootViewController = self.tabBarController
         window!.makeKeyAndVisible()
@@ -52,6 +53,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         let settingsViewController = SettingsViewController(nibName: "SettingsView", bundle: nil)
         settingsViewController.title = "Settings"
         navigationController.viewControllers = [settingsViewController]
+    }
+    
+    // Load the test tab into its nav controller.
+    private func loadTestTab(_ navigationController : UINavigationController) {
+        let testViewController = TestViewController(nibName: "TestView", bundle: nil)
+        testViewController.title = "Test"
+        navigationController.viewControllers = [testViewController]
     }
     
     // Switch to the named theme.

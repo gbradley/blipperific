@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="185" id="EWW-00-Fyk" customClass="EntryMainTableViewCell" customModule="Blipperific" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="365" height="185"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EWW-00-Fyk" id="eli-62-iRw">
+                <rect key="frame" x="0.0" y="0.0" width="365" height="184.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Cc-BB-veq">
+                        <rect key="frame" x="0.0" y="0.0" width="365" height="185"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BXa-dn-kql">
+                                <rect key="frame" x="0.0" y="0.0" width="1095" height="185"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gj9-l5-cn9">
+                                        <rect key="frame" x="365" y="0.0" width="365" height="185"/>
+                                        <color key="backgroundColor" red="0.79872117556346978" green="0.44743741179222063" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Gj9-l5-cn9" firstAttribute="centerX" secondItem="BXa-dn-kql" secondAttribute="centerX" id="7Bo-5K-YMe"/>
+                                    <constraint firstItem="Gj9-l5-cn9" firstAttribute="top" secondItem="BXa-dn-kql" secondAttribute="top" id="AvY-Vd-GLJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="Gj9-l5-cn9" secondAttribute="bottom" id="bqT-Ax-fZC"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="BXa-dn-kql" firstAttribute="leading" secondItem="0Cc-BB-veq" secondAttribute="leading" id="2ph-bW-Y2E"/>
+                            <constraint firstItem="BXa-dn-kql" firstAttribute="top" secondItem="0Cc-BB-veq" secondAttribute="top" id="7PY-5d-nzv"/>
+                            <constraint firstItem="BXa-dn-kql" firstAttribute="height" secondItem="0Cc-BB-veq" secondAttribute="height" id="7vl-vO-n7d"/>
+                            <constraint firstItem="BXa-dn-kql" firstAttribute="width" secondItem="0Cc-BB-veq" secondAttribute="width" multiplier="3" id="OiA-bA-ogN"/>
+                            <constraint firstAttribute="trailing" secondItem="BXa-dn-kql" secondAttribute="trailing" id="SzD-O0-A9D"/>
+                            <constraint firstAttribute="bottom" secondItem="BXa-dn-kql" secondAttribute="bottom" id="fa9-MM-HIH"/>
+                            <constraint firstItem="Gj9-l5-cn9" firstAttribute="width" secondItem="0Cc-BB-veq" secondAttribute="width" id="v79-d7-9ef"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="delegate" destination="EWW-00-Fyk" id="YR2-SB-Y8i"/>
+                        </connections>
+                    </scrollView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="0Cc-BB-veq" firstAttribute="top" secondItem="eli-62-iRw" secondAttribute="top" id="2fE-d4-quv"/>
+                    <constraint firstAttribute="bottom" secondItem="0Cc-BB-veq" secondAttribute="bottom" id="508-Ae-zmi"/>
+                    <constraint firstAttribute="trailing" secondItem="0Cc-BB-veq" secondAttribute="trailing" id="feN-Ms-wqi"/>
+                    <constraint firstItem="0Cc-BB-veq" firstAttribute="leading" secondItem="eli-62-iRw" secondAttribute="leading" id="qEU-eu-DFm"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="scrollView" destination="0Cc-BB-veq" id="xUb-fk-SAS"/>
+            </connections>
+            <point key="canvasLocation" x="-42.5" y="-0.5"/>
+        </tableViewCell>
+    </objects>
+</document>

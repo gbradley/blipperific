@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class BrowseTableViewCell : UITableViewCell {
     
     @IBOutlet var label : UILabel!
@@ -37,7 +39,7 @@ class BrowseTableViewCell : UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
-        // Switching themes + selected cells can cause issues with bbackgrounds, so reset it here.
+        // Switching themes + selected cells can cause issues with backgrounds, so reset it here.
         if (!selected) {
             entryCollectionView.backgroundColor = UIColor.clear
         }

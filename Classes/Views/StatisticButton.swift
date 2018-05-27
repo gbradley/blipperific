@@ -5,6 +5,7 @@
 //  Created by Graham on 02/05/2018.
 //  Copyright © 2018 GMB Technology. All rights reserved.
 //
+// This class is used for showing a button which updates entry statistics such as favourite or star.
 
 import UIKit
 

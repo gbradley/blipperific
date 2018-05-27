@@ -11,5 +11,4 @@ import UIKit
 class EntryCollectionViewCell : UICollectionViewCell {
     
     @IBOutlet var primaryImageView : UIImageView!
-    
 }

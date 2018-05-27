@@ -140,6 +140,11 @@ class EntryStreamViewController : UIViewController, UITableViewDelegate, UIScrol
                 if (cell.isSelected) {
                     entryTableView.deselectRow(at: indexPath, animated: false)
                 }
+                
+                // Launch the entry controller.
+                let entryViewController = EntryViewController(nibName: "EntryView", bundle: nil)
+                self.presentJournalController(entryViewController)
+                
             }
         }
     }
