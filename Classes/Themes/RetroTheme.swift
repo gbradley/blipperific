@@ -20,6 +20,9 @@ class RetroTheme : Theme {
         self.selectedBackgroundColor = UIColor.init(rgb: 0x3a3a3a)
         self.photoBackgroundColor = UIColor.init(rgb: 0x555555)
         self.fontName = "Georgia"
+        self.userTextFontName = "Georgia"
+        self.userBoldTextFontName = "Georgia-Bold"
+        self.userItalicTextFontName = "Georgia-Italic"
         self.statusBarStyle = UIStatusBarStyle.lightContent
         self.navigationBarStyle = UIBarStyle.blackTranslucent
         self.tabBarTintColor = UIColor.init(rgb : 0xFFFFFF)

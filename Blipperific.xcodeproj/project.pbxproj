@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		BF29AD7B20A0EF22002DB4CE /* EntryStreamPaginationViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF29AD7A20A0EF22002DB4CE /* EntryStreamPaginationViewCell.xib */; };
 		BF29AD7F20A0F503002DB4CE /* FontAwesomeFreeRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF29AD7E20A0F502002DB4CE /* FontAwesomeFreeRegular.otf */; };
-		BF29AD8120A18038002DB4CE /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29AD8020A18038002DB4CE /* EntryViewController.swift */; };
-		BF29AD8320A18068002DB4CE /* EntryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF29AD8220A18068002DB4CE /* EntryView.xib */; };
 		BF2CCCCD209A045F004598B8 /* StatisticButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2CCCCC209A045F004598B8 /* StatisticButton.swift */; };
 		BF2CCCCF209A2BF5004598B8 /* Int+Abbreviation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2CCCCE209A2BF5004598B8 /* Int+Abbreviation.swift */; };
 		BF2CCCD1209A5EB3004598B8 /* UsernameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2CCCD0209A5EB3004598B8 /* UsernameButton.swift */; };
@@ -62,12 +60,20 @@
 		BF9F35A82090E81300355585 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF9F359A2090E81300355585 /* Roboto-Bold.ttf */; };
 		BF9F35A92090E81300355585 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF9F359B2090E81300355585 /* Roboto-Thin.ttf */; };
 		BF9F35AA2090E81300355585 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF9F359C2090E81300355585 /* Roboto-Black.ttf */; };
-		BFF200CD20B860990074AF5C /* EntryTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF200CC20B860990074AF5C /* EntryTitleView.swift */; };
+		BFBCCE9D20C68D8600C13EA3 /* String+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBCCE9C20C68D8600C13EA3 /* String+HTML.swift */; };
+		BFBCCE9F20C6EBC700C13EA3 /* EntryTableViewPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBCCE9E20C6EBC700C13EA3 /* EntryTableViewPhotoCell.swift */; };
+		BFBCCEA120C6EC0C00C13EA3 /* EntryTableViewPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFBCCEA020C6EC0C00C13EA3 /* EntryTableViewPhotoCell.xib */; };
+		BFBCCEA320C6EC9500C13EA3 /* EntryTableViewTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBCCEA220C6EC9500C13EA3 /* EntryTableViewTitleCell.swift */; };
+		BFBCCEA520C6ECCF00C13EA3 /* EntryTableViewTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFBCCEA420C6ECCF00C13EA3 /* EntryTableViewTitleCell.xib */; };
+		BFBCCEA720C6ED5500C13EA3 /* EntyTableViewDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBCCEA620C6ED5500C13EA3 /* EntyTableViewDescriptionCell.swift */; };
+		BFBCCEA920C6ED8F00C13EA3 /* EntryTableViewDescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFBCCEA820C6ED8F00C13EA3 /* EntryTableViewDescriptionCell.xib */; };
+		BFBCCEAB20C6F86000C13EA3 /* EntryTableViewMetadataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBCCEAA20C6F86000C13EA3 /* EntryTableViewMetadataCell.swift */; };
+		BFBCCEAD20C6F87800C13EA3 /* EntryTableViewMetadataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFBCCEAC20C6F87800C13EA3 /* EntryTableViewMetadataCell.xib */; };
+		BFBCCEAF20C6FBB800C13EA3 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBCCEAE20C6FBB800C13EA3 /* SecondaryButton.swift */; };
+		BFF200CD20B860990074AF5C /* EntryNavigationTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF200CC20B860990074AF5C /* EntryNavigationTitleView.swift */; };
 		BFF200CF20B8615A0074AF5C /* EntryNavigationTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF200CE20B8615A0074AF5C /* EntryNavigationTitleView.xib */; };
-		BFF200D220B87FAD0074AF5C /* EntryMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF200D120B87FAD0074AF5C /* EntryMainTableViewCell.xib */; };
-		BFF200D420B87FCC0074AF5C /* EntryMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF200D320B87FCC0074AF5C /* EntryMainTableViewCell.swift */; };
-		BFF200D620BAD18D0074AF5C /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF200D520BAD18D0074AF5C /* TestViewController.swift */; };
-		BFF200D820BAD1B30074AF5C /* TestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF200D720BAD1B30074AF5C /* TestView.xib */; };
+		BFF200D620BAD18D0074AF5C /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF200D520BAD18D0074AF5C /* EntryViewController.swift */; };
+		BFF200D820BAD1B30074AF5C /* EntryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF200D720BAD1B30074AF5C /* EntryView.xib */; };
 		C900C852D1F1267F3B012BFF /* Pods_Blipperific.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F04356162D284285FE7AEB14 /* Pods_Blipperific.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,8 +82,6 @@
 		57111022F5883FA3C2677ABD /* Pods-Blipperific.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blipperific.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Blipperific/Pods-Blipperific.debug.xcconfig"; sourceTree = "<group>"; };
 		BF29AD7A20A0EF22002DB4CE /* EntryStreamPaginationViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryStreamPaginationViewCell.xib; sourceTree = "<group>"; };
 		BF29AD7E20A0F502002DB4CE /* FontAwesomeFreeRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesomeFreeRegular.otf; sourceTree = "<group>"; };
-		BF29AD8020A18038002DB4CE /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
-		BF29AD8220A18068002DB4CE /* EntryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryView.xib; sourceTree = "<group>"; };
 		BF2CCCCC209A045F004598B8 /* StatisticButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticButton.swift; sourceTree = "<group>"; };
 		BF2CCCCE209A2BF5004598B8 /* Int+Abbreviation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Abbreviation.swift"; sourceTree = "<group>"; };
 		BF2CCCD0209A5EB3004598B8 /* UsernameButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameButton.swift; sourceTree = "<group>"; };
@@ -131,12 +135,20 @@
 		BF9F359A2090E81300355585 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		BF9F359B2090E81300355585 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		BF9F359C2090E81300355585 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
-		BFF200CC20B860990074AF5C /* EntryTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTitleView.swift; sourceTree = "<group>"; };
+		BFBCCE9C20C68D8600C13EA3 /* String+HTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HTML.swift"; sourceTree = "<group>"; };
+		BFBCCE9E20C6EBC700C13EA3 /* EntryTableViewPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewPhotoCell.swift; sourceTree = "<group>"; };
+		BFBCCEA020C6EC0C00C13EA3 /* EntryTableViewPhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryTableViewPhotoCell.xib; sourceTree = "<group>"; };
+		BFBCCEA220C6EC9500C13EA3 /* EntryTableViewTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewTitleCell.swift; sourceTree = "<group>"; };
+		BFBCCEA420C6ECCF00C13EA3 /* EntryTableViewTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryTableViewTitleCell.xib; sourceTree = "<group>"; };
+		BFBCCEA620C6ED5500C13EA3 /* EntyTableViewDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntyTableViewDescriptionCell.swift; sourceTree = "<group>"; };
+		BFBCCEA820C6ED8F00C13EA3 /* EntryTableViewDescriptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryTableViewDescriptionCell.xib; sourceTree = "<group>"; };
+		BFBCCEAA20C6F86000C13EA3 /* EntryTableViewMetadataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewMetadataCell.swift; sourceTree = "<group>"; };
+		BFBCCEAC20C6F87800C13EA3 /* EntryTableViewMetadataCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryTableViewMetadataCell.xib; sourceTree = "<group>"; };
+		BFBCCEAE20C6FBB800C13EA3 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
+		BFF200CC20B860990074AF5C /* EntryNavigationTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryNavigationTitleView.swift; sourceTree = "<group>"; };
 		BFF200CE20B8615A0074AF5C /* EntryNavigationTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryNavigationTitleView.xib; sourceTree = "<group>"; };
-		BFF200D120B87FAD0074AF5C /* EntryMainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryMainTableViewCell.xib; sourceTree = "<group>"; };
-		BFF200D320B87FCC0074AF5C /* EntryMainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryMainTableViewCell.swift; sourceTree = "<group>"; };
-		BFF200D520BAD18D0074AF5C /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
-		BFF200D720BAD1B30074AF5C /* TestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestView.xib; sourceTree = "<group>"; };
+		BFF200D520BAD18D0074AF5C /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		BFF200D720BAD1B30074AF5C /* EntryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryView.xib; sourceTree = "<group>"; };
 		F04356162D284285FE7AEB14 /* Pods_Blipperific.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Blipperific.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -197,31 +209,38 @@
 				BF56B15F2099D97F00BFF4EC /* UIViewController+BackButton.swift */,
 				BF3D294820B8428700C139CA /* UIViewController+Journal.swift */,
 				BF2CCCCE209A2BF5004598B8 /* Int+Abbreviation.swift */,
+				BFBCCE9C20C68D8600C13EA3 /* String+HTML.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		BF4B33792091C69C000262F8 /* Tables */ = {
+		BF4B33792091C69C000262F8 /* Tables & Cells */ = {
 			isa = PBXGroup;
 			children = (
 				BF4B338F209243B3000262F8 /* EntryStreamTableViewCell.xib */,
+				BFBCCEA020C6EC0C00C13EA3 /* EntryTableViewPhotoCell.xib */,
 				BF29AD7A20A0EF22002DB4CE /* EntryStreamPaginationViewCell.xib */,
 				BF4B337F2091CA3F000262F8 /* BrowseTableViewCell.xib */,
 				BF4B33852091D04E000262F8 /* EntryCollectionViewCell.xib */,
-				BFF200D120B87FAD0074AF5C /* EntryMainTableViewCell.xib */,
+				BFBCCEA420C6ECCF00C13EA3 /* EntryTableViewTitleCell.xib */,
+				BFBCCEA820C6ED8F00C13EA3 /* EntryTableViewDescriptionCell.xib */,
+				BFBCCEAC20C6F87800C13EA3 /* EntryTableViewMetadataCell.xib */,
 			);
-			path = Tables;
+			path = "Tables & Cells";
 			sourceTree = "<group>";
 		};
-		BF4B337E2091CA1C000262F8 /* Tables */ = {
+		BF4B337E2091CA1C000262F8 /* Tables & Cells */ = {
 			isa = PBXGroup;
 			children = (
 				BF4B33812091CA4E000262F8 /* BrowseTableViewCell.swift */,
-				BFF200D320B87FCC0074AF5C /* EntryMainTableViewCell.swift */,
 				BF4B338D20924380000262F8 /* EntryStreamTableViewCell.swift */,
 				BF4B33872091D06E000262F8 /* EntryCollectionViewCell.swift */,
+				BFBCCE9E20C6EBC700C13EA3 /* EntryTableViewPhotoCell.swift */,
+				BFBCCEA220C6EC9500C13EA3 /* EntryTableViewTitleCell.swift */,
+				BFBCCEA620C6ED5500C13EA3 /* EntyTableViewDescriptionCell.swift */,
+				BFBCCEAA20C6F86000C13EA3 /* EntryTableViewMetadataCell.swift */,
 			);
-			path = Tables;
+			path = "Tables & Cells";
 			sourceTree = "<group>";
 		};
 		BF7C3D8D2090D28500DF0689 = {
@@ -268,17 +287,10 @@
 		BF9F35872090E2E800355585 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BF4B337E2091CA1C000262F8 /* Tables */,
-				BF9F358A2090E33200355585 /* TemplateView.swift */,
-				BFF200CC20B860990074AF5C /* EntryTitleView.swift */,
-				BF8B4DCD20930BCF00BAD163 /* PhotoBackgroundView.swift */,
-				BF4B334820910271000262F8 /* HeadingLabel.swift */,
-				BF5AA3A320933EAA00FFFF57 /* DisclosureButton.swift */,
-				BF2CCCD0209A5EB3004598B8 /* UsernameButton.swift */,
-				BF56B15B2099B7AD00BFF4EC /* BackButton.swift */,
-				BF4B339120924C0D000262F8 /* TitleLabel.swift */,
-				BF56B1632099EB2500BFF4EC /* StatisticLabel.swift */,
-				BF2CCCCC209A045F004598B8 /* StatisticButton.swift */,
+				BFF200E120BD5F4E0074AF5C /* Misc */,
+				BFF200E020BD5F220074AF5C /* Labels */,
+				BFF200DF20BD5EEF0074AF5C /* Buttons */,
+				BF4B337E2091CA1C000262F8 /* Tables & Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -288,9 +300,8 @@
 			children = (
 				BF7C3D9B2090D28500DF0689 /* BrowseViewController.swift */,
 				BF4B338920923B4A000262F8 /* EntryStreamViewController.swift */,
-				BF29AD8020A18038002DB4CE /* EntryViewController.swift */,
 				BF4B334D2091242F000262F8 /* SettingsViewController.swift */,
-				BFF200D520BAD18D0074AF5C /* TestViewController.swift */,
+				BFF200D520BAD18D0074AF5C /* EntryViewController.swift */,
 				BF3D294C20B846FD00C139CA /* JournalViewController.swift */,
 			);
 			path = "View Controllers";
@@ -301,11 +312,10 @@
 			children = (
 				BF7C3DAB2090D3C200DF0689 /* BrowseView.xib */,
 				BF4B334F209124B7000262F8 /* SettingsView.xib */,
-				BFF200D720BAD1B30074AF5C /* TestView.xib */,
+				BFF200D720BAD1B30074AF5C /* EntryView.xib */,
 				BFF200D020B869C20074AF5C /* Components */,
 				BF4B338B20923B71000262F8 /* EntryStreamView.xib */,
-				BF29AD8220A18068002DB4CE /* EntryView.xib */,
-				BF4B33792091C69C000262F8 /* Tables */,
+				BF4B33792091C69C000262F8 /* Tables & Cells */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -358,6 +368,38 @@
 				BFF200CE20B8615A0074AF5C /* EntryNavigationTitleView.xib */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		BFF200DF20BD5EEF0074AF5C /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				BF2CCCD0209A5EB3004598B8 /* UsernameButton.swift */,
+				BF5AA3A320933EAA00FFFF57 /* DisclosureButton.swift */,
+				BF2CCCCC209A045F004598B8 /* StatisticButton.swift */,
+				BFBCCEAE20C6FBB800C13EA3 /* SecondaryButton.swift */,
+				BF56B15B2099B7AD00BFF4EC /* BackButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		BFF200E020BD5F220074AF5C /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				BF4B334820910271000262F8 /* HeadingLabel.swift */,
+				BF4B339120924C0D000262F8 /* TitleLabel.swift */,
+				BF56B1632099EB2500BFF4EC /* StatisticLabel.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
+		BFF200E120BD5F4E0074AF5C /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				BFF200CC20B860990074AF5C /* EntryNavigationTitleView.swift */,
+				BF8B4DCD20930BCF00BAD163 /* PhotoBackgroundView.swift */,
+				BF9F358A2090E33200355585 /* TemplateView.swift */,
+			);
+			path = Misc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,14 +465,15 @@
 				BF9F35A92090E81300355585 /* Roboto-Thin.ttf in Resources */,
 				BF9F359E2090E81300355585 /* Roboto-Medium.ttf in Resources */,
 				BF56B15E2099C51600BFF4EC /* BackButton.xib in Resources */,
+				BFBCCEA520C6ECCF00C13EA3 /* EntryTableViewTitleCell.xib in Resources */,
 				BF9F35A52090E81300355585 /* Roboto-Italic.ttf in Resources */,
 				BF9F35A82090E81300355585 /* Roboto-Bold.ttf in Resources */,
 				BF9F35A42090E81300355585 /* Roboto-LightItalic.ttf in Resources */,
 				BF9F35AA2090E81300355585 /* Roboto-Black.ttf in Resources */,
 				BF4B33782091B0EA000262F8 /* TabBar.xib in Resources */,
 				BF9F35A72090E81300355585 /* Roboto-BlackItalic.ttf in Resources */,
-				BFF200D220B87FAD0074AF5C /* EntryMainTableViewCell.xib in Resources */,
 				BFF200CF20B8615A0074AF5C /* EntryNavigationTitleView.xib in Resources */,
+				BFBCCEAD20C6F87800C13EA3 /* EntryTableViewMetadataCell.xib in Resources */,
 				BF4B33862091D04E000262F8 /* EntryCollectionViewCell.xib in Resources */,
 				BF4B3390209243B3000262F8 /* EntryStreamTableViewCell.xib in Resources */,
 				BF9F35A02090E81300355585 /* Roboto-Regular.ttf in Resources */,
@@ -438,19 +481,20 @@
 				BF9F35A62090E81300355585 /* LICENSE.txt in Resources */,
 				BF29AD7F20A0F503002DB4CE /* FontAwesomeFreeRegular.otf in Resources */,
 				BF4B338C20923B71000262F8 /* EntryStreamView.xib in Resources */,
+				BFBCCEA120C6EC0C00C13EA3 /* EntryTableViewPhotoCell.xib in Resources */,
 				BF9F359F2090E81300355585 /* Roboto-Light.ttf in Resources */,
 				BF9F35A12090E81300355585 /* Roboto-MediumItalic.ttf in Resources */,
 				BF56B1622099E7EA00BFF4EC /* FontAwesomeFreeSolid.otf in Resources */,
-				BFF200D820BAD1B30074AF5C /* TestView.xib in Resources */,
+				BFF200D820BAD1B30074AF5C /* EntryView.xib in Resources */,
 				BF7C3DA42090D28700DF0689 /* LaunchScreen.storyboard in Resources */,
 				BF9F35A22090E81300355585 /* Roboto-ThinItalic.ttf in Resources */,
+				BFBCCEA920C6ED8F00C13EA3 /* EntryTableViewDescriptionCell.xib in Resources */,
 				BF4B33802091CA3F000262F8 /* BrowseTableViewCell.xib in Resources */,
 				BF7C3DAC2090D3C200DF0689 /* BrowseView.xib in Resources */,
 				BF29AD7B20A0EF22002DB4CE /* EntryStreamPaginationViewCell.xib in Resources */,
 				BF4B3350209124B7000262F8 /* SettingsView.xib in Resources */,
 				BF9F35A32090E81300355585 /* Roboto-BoldItalic.ttf in Resources */,
 				BF7C3DA12090D28700DF0689 /* Assets.xcassets in Resources */,
-				BF29AD8320A18068002DB4CE /* EntryView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,26 +546,30 @@
 			files = (
 				BF7C3D9C2090D28500DF0689 /* BrowseViewController.swift in Sources */,
 				BF4B33432090FADC000262F8 /* WhiteTheme.swift in Sources */,
-				BFF200CD20B860990074AF5C /* EntryTitleView.swift in Sources */,
+				BFF200CD20B860990074AF5C /* EntryNavigationTitleView.swift in Sources */,
 				BF3D294920B8428700C139CA /* UIViewController+Journal.swift in Sources */,
 				BF56B1502099335C00BFF4EC /* Notification.swift in Sources */,
 				BF2CCCD1209A5EB3004598B8 /* UsernameButton.swift in Sources */,
 				BF4B33452090FC6A000262F8 /* RetroTheme.swift in Sources */,
 				BF4B339220924C0D000262F8 /* TitleLabel.swift in Sources */,
+				BFBCCEAB20C6F86000C13EA3 /* EntryTableViewMetadataCell.swift in Sources */,
 				BF3D294D20B846FD00C139CA /* JournalViewController.swift in Sources */,
 				BF56B15C2099B7AD00BFF4EC /* BackButton.swift in Sources */,
-				BFF200D620BAD18D0074AF5C /* TestViewController.swift in Sources */,
-				BFF200D420B87FCC0074AF5C /* EntryMainTableViewCell.swift in Sources */,
+				BFF200D620BAD18D0074AF5C /* EntryViewController.swift in Sources */,
 				BF4B338E20924380000262F8 /* EntryStreamTableViewCell.swift in Sources */,
 				BF4B333F2090F716000262F8 /* UIColor+Hex.swift in Sources */,
 				BF8B4DD02093116B00BAD163 /* Entry.swift in Sources */,
+				BFBCCEA320C6EC9500C13EA3 /* EntryTableViewTitleCell.swift in Sources */,
 				BF56B1642099EB2500BFF4EC /* StatisticLabel.swift in Sources */,
-				BF29AD8120A18038002DB4CE /* EntryViewController.swift in Sources */,
+				BFBCCEA720C6ED5500C13EA3 /* EntyTableViewDescriptionCell.swift in Sources */,
 				BF4B33822091CA4E000262F8 /* BrowseTableViewCell.swift in Sources */,
 				BF4B33412090FA6B000262F8 /* Theme.swift in Sources */,
+				BFBCCEAF20C6FBB800C13EA3 /* SecondaryButton.swift in Sources */,
+				BFBCCE9F20C6EBC700C13EA3 /* EntryTableViewPhotoCell.swift in Sources */,
 				BF2CCCCD209A045F004598B8 /* StatisticButton.swift in Sources */,
 				BF4B334920910271000262F8 /* HeadingLabel.swift in Sources */,
 				BF8B4DCE20930BCF00BAD163 /* PhotoBackgroundView.swift in Sources */,
+				BFBCCE9D20C68D8600C13EA3 /* String+HTML.swift in Sources */,
 				BF4B338A20923B4A000262F8 /* EntryStreamViewController.swift in Sources */,
 				BF7C3D9A2090D28500DF0689 /* AppDelegate.swift in Sources */,
 				BF56B1602099D97F00BFF4EC /* UIViewController+BackButton.swift in Sources */,

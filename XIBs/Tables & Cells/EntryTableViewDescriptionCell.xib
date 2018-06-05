@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="162" id="v23-cE-gcv" customClass="EntryTableViewDescriptionCell" customModule="Blipperific" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="162"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="v23-cE-gcv" id="wGy-fz-jQg">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="161.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S7t-kT-qpL" customClass="PhotoBackgroundView" customModule="Blipperific" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="161.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6EO-L1-rrU">
+                        <rect key="frame" x="5" y="2" width="365" height="157.5"/>
+                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="6EO-L1-rrU" firstAttribute="leading" secondItem="wGy-fz-jQg" secondAttribute="leading" constant="5" id="1m6-BV-7GS"/>
+                    <constraint firstAttribute="bottom" secondItem="6EO-L1-rrU" secondAttribute="bottom" constant="2" id="I6c-Q9-ifJ"/>
+                    <constraint firstAttribute="trailing" secondItem="6EO-L1-rrU" secondAttribute="trailing" constant="5" id="JjJ-vw-DX8"/>
+                    <constraint firstItem="S7t-kT-qpL" firstAttribute="leading" secondItem="wGy-fz-jQg" secondAttribute="leading" id="P76-yL-f8T"/>
+                    <constraint firstItem="6EO-L1-rrU" firstAttribute="top" secondItem="wGy-fz-jQg" secondAttribute="top" constant="2" id="WJZ-qS-VmP"/>
+                    <constraint firstItem="S7t-kT-qpL" firstAttribute="top" secondItem="wGy-fz-jQg" secondAttribute="top" id="eDd-zm-VRf"/>
+                    <constraint firstAttribute="bottom" secondItem="S7t-kT-qpL" secondAttribute="bottom" id="tBk-lz-NeC"/>
+                    <constraint firstAttribute="trailing" secondItem="S7t-kT-qpL" secondAttribute="trailing" id="yt3-NT-SpM"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="descriptionTextView" destination="6EO-L1-rrU" id="jyO-1p-0q7"/>
+            </connections>
+            <point key="canvasLocation" x="-45.5" y="97"/>
+        </tableViewCell>
+    </objects>
+</document>

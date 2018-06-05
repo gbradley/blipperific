@@ -20,6 +20,9 @@ class WhiteTheme : Theme {
         self.selectedBackgroundColor = UIColor.init(rgb: 0xededed)
         self.photoBackgroundColor = UIColor.init(rgb: 0xf6f6f6)
         self.fontName = "Museo-500"
+        self.userTextFontName = "Roboto-Regular"
+        self.userBoldTextFontName = "Roboto-Bold"
+        self.userItalicTextFontName = "Roboto-Italic"
         self.statusBarStyle = UIStatusBarStyle.default
         self.navigationBarStyle = UIBarStyle.default
         self.tabBarTintColor = UIColor.init(rgb : 0x1897D2)

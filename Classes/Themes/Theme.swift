@@ -18,6 +18,9 @@ class Theme {
     var selectedBackgroundColor : UIColor!
     var photoBackgroundColor : UIColor!
     var fontName : String!
+    var userTextFontName : String!
+    var userBoldTextFontName : String!
+    var userItalicTextFontName : String!
     var statusBarStyle : UIStatusBarStyle!
     var navigationBarStyle : UIBarStyle!
     var tabBarTintColor : UIColor!
@@ -91,6 +94,9 @@ class Theme {
         labelAppearance.font = UIFont(name: self.fontName, size: 14.0)
         StatisticLabel.appearance().font = UIFont(name: self.fontName, size: 12.0)
         
+        // Set appearance for text views.
+        UITextView.appearance().tintColor = self.buttonColor
+        
         // Set appearance for buttons.
         UILabel.appearance(whenContainedInInstancesOf: [UIButton.self]).font = self.buttonFont()
         UIButton.appearance().setTitleColor(self.buttonColor, for:.normal)
@@ -105,6 +111,11 @@ class Theme {
         StatisticButton.appearance().setTitleColor(self.buttonColor, for: .highlighted)
         StatisticButton.appearance().setTitleColor(self.buttonColor, for: .selected)
         StatisticButton.appearance().setTitleColor(self.buttonColor, for: [.highlighted, .selected])
+        
+        SecondaryButton.appearance().setTitleColor(self.textColor, for:.normal)
+        SecondaryButton.appearance().setTitleColor(self.buttonColor, for: .highlighted)
+        SecondaryButton.appearance().setTitleColor(self.buttonColor, for: .selected)
+        SecondaryButton.appearance().setTitleColor(self.buttonColor, for: [.highlighted, .selected])
         
         // Set appearance for tab bar items.
         UITabBar.appearance().tintColor = self.tabBarTintColor
