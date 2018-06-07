@@ -30,9 +30,9 @@ struct EntryDetails : Codable {
     var comments : [String : Int]
     
     init() {
-        journal_title = "Test"
-        description = "this is a test"
-        description_html = "This is a test"
+        journal_title = "Tractor Factory Photos"
+        description = "Parsing HTML failed!"
+        description_html = "Lorem ipsum dolor amet <b>subway</b> tile gochujang <a href='https://www.google.com'>flat white<a> synth. Small batch hot chicken meggings, literally palo santo vexillologist drinking vinegar meditation godard next level. Synth VHS meh, lyft offal blog bicycle rights man braid skateboard freegan truffaut sartorial selfies jianbing viral. PBR&B bicycle rights meh, messenger bag YOLO ethical meditation typewriter godard squid microdosing glossier kinfolk swag single-origin coffee. Tofu squid echo park skateboard pitchfork hoodie mustache marfa artisan banh mi narwhal. Brunch asymmetrical master cleanse, pitchfork kinfolk af mumblecore neutra hella. Man braid etsy lomo quinoa street art scenester neutra kickstarter franzen +1 iceland.<br /><br />Pop-up fanny pack shabby chic, kale chips live-edge glossier cardigan cornhole fixie YOLO waistcoat literally. Narwhal pickled snackwave ethical food truck bicycle rights. Pabst af keffiyeh chartreuse leggings aesthetic health goth subway tile hell of succulents marfa bespoke sustainable. Cardigan ramps brooklyn offal, roof party neutra literally +1 kale chips air plant affogato actually messenger bag austin poke. Gastropub bespoke freegan lomo pitchfork meggings helvetica synth sriracha actually cloud bread occupy mlkshk. Health goth keffiyeh pork belly, normcore chia brooklyn disrupt activated charcoal schlitz green juice tote bag vegan blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah."
         tags = ["tagA", "tagB"]
         views = ["total" : 3096]
         stars = ["total" : 6, "starred" : 1]
@@ -45,5 +45,13 @@ struct EntryResponse : Codable {
     
     var entry : EntrySummary
     var details : EntryDetails?
+    
+}
+
+struct EntryRecord : Codable {
+    
+    var fetchStatus : EntryManager.FetchStatus
+    var dataStatus : EntryManager.DataStatus
+    var response : EntryResponse?
     
 }

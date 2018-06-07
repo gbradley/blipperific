@@ -12,14 +12,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="sLl-Ie-DGZ" customClass="EntryTableViewTitleCell" customModule="Blipperific" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sLl-Ie-DGZ" id="8aq-i0-WPg">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="34.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="40.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i2i-HF-yjp" customClass="PhotoBackgroundView" customModule="Blipperific" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="36.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="41.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRp-tE-RIz">
@@ -34,7 +34,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="i2i-HF-yjp" secondAttribute="bottom" id="PUl-M7-yVS"/>
-                    <constraint firstAttribute="bottom" secondItem="hRp-tE-RIz" secondAttribute="bottom" constant="5" id="ROr-pS-TJz"/>
+                    <constraint firstAttribute="bottom" secondItem="hRp-tE-RIz" secondAttribute="bottom" constant="10" id="ROr-pS-TJz"/>
                     <constraint firstAttribute="trailing" secondItem="hRp-tE-RIz" secondAttribute="trailing" constant="10" id="WhX-tX-rt9"/>
                     <constraint firstItem="hRp-tE-RIz" firstAttribute="leading" secondItem="8aq-i0-WPg" secondAttribute="leading" constant="10" id="d3U-Fi-NMc"/>
                     <constraint firstItem="i2i-HF-yjp" firstAttribute="top" secondItem="8aq-i0-WPg" secondAttribute="top" id="o1Z-ra-pQ6"/>

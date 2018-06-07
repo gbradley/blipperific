@@ -23,6 +23,7 @@ class RetroTheme : Theme {
         self.userTextFontName = "Georgia"
         self.userBoldTextFontName = "Georgia-Bold"
         self.userItalicTextFontName = "Georgia-Italic"
+        self.userTextLineSpacing = 5
         self.statusBarStyle = UIStatusBarStyle.lightContent
         self.navigationBarStyle = UIBarStyle.blackTranslucent
         self.tabBarTintColor = UIColor.init(rgb : 0xFFFFFF)

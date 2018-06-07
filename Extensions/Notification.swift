@@ -11,4 +11,6 @@ import Foundation
 extension Notification.Name {
     
     static let themeWasApplied = Notification.Name("themeWasApplied")
+    static let entryManagerDidUpdateRecord = Notification.Name("EntryManagerDidUpdateRecord")
+    
 }

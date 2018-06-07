@@ -21,6 +21,7 @@ class Theme {
     var userTextFontName : String!
     var userBoldTextFontName : String!
     var userItalicTextFontName : String!
+    var userTextLineSpacing : CGFloat!
     var statusBarStyle : UIStatusBarStyle!
     var navigationBarStyle : UIBarStyle!
     var tabBarTintColor : UIColor!

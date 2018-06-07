@@ -32,7 +32,7 @@ extension String {
         
         // Set the paragraph attributes.
         let paragraphStyle = NSMutableParagraphStyle.init()
-        paragraphStyle.lineSpacing = 3
+        paragraphStyle.lineSpacing = currentTheme.userTextLineSpacing
         attributedString.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: range)
         
         // Enumate through the occurances of the font attribute.

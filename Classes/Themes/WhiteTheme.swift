@@ -23,6 +23,7 @@ class WhiteTheme : Theme {
         self.userTextFontName = "Roboto-Regular"
         self.userBoldTextFontName = "Roboto-Bold"
         self.userItalicTextFontName = "Roboto-Italic"
+        self.userTextLineSpacing = 3
         self.statusBarStyle = UIStatusBarStyle.default
         self.navigationBarStyle = UIBarStyle.default
         self.tabBarTintColor = UIColor.init(rgb : 0x1897D2)

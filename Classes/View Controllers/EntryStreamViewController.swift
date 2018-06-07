@@ -14,20 +14,25 @@ class EntryStreamViewController : UIViewController, UITableViewDelegate, UIScrol
     @IBOutlet var entryTableView : UITableView!
     
     var shouldFetchMoreEntries : Bool! = true
-    var entryResponses : [EntryResponse]
+    var entryIds : [Int]
     
     private enum Section : Int {
         case Entries = 0
         case Pagination = 1
     }
     
-    init(nibName nibNameOrNil: String?, entryResponses: [EntryResponse], bundle nibBundleOrNil: Bundle?) {
-        self.entryResponses = entryResponses
+    init(nibName nibNameOrNil: String?, entryIds: [Int], bundle nibBundleOrNil: Bundle?) {
+        self.entryIds = entryIds
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        // Remove observer when cleaning up.
+        NotificationCenter.default.removeObserver(self)
     }
     
     override func viewDidLoad() {
@@ -41,6 +46,9 @@ class EntryStreamViewController : UIViewController, UITableViewDelegate, UIScrol
         // Hook up refresh control.
         entryTableView.refreshControl = UIRefreshControl()
         entryTableView.refreshControl?.addTarget(self, action: #selector(self.refreshEntries), for: .valueChanged)
+        
+        // Listen for notifications
+        NotificationCenter.default.addObserver(self, selector: #selector(self.entryUpdated), name: .entryManagerDidUpdateRecord, object: nil)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -50,7 +58,7 @@ class EntryStreamViewController : UIViewController, UITableViewDelegate, UIScrol
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var count : Int = 0
         if (section == Section.Entries.rawValue) {
-            count = entryResponses.count
+            count = entryIds.count
         } else if (section == Section.Pagination.rawValue) {
             count = 1
         }
@@ -63,7 +71,8 @@ class EntryStreamViewController : UIViewController, UITableViewDelegate, UIScrol
         if (indexPath.section == Section.Entries.rawValue) {
             // Determine the height based on the image's aspect ratio and the margins.
             let width = self.view.frame.size.width - 10
-            let aspectRatio = entryResponses[indexPath.row].entry.image_aspect_ratio
+            let response = EntryManager.shared.record(for: entryIds[indexPath.row]).response!
+            let aspectRatio = response.entry.image_aspect_ratio
             height = 40 + ((1.0 / CGFloat(aspectRatio!)) * width)
         } else if (indexPath.section == Section.Pagination.rawValue) {
             height = 30
@@ -85,8 +94,8 @@ class EntryStreamViewController : UIViewController, UITableViewDelegate, UIScrol
     
     private func cellForEntryAt(_ indexPath : IndexPath) -> EntryStreamTableViewCell {
         let cell = entryTableView!.dequeueReusableCell(withIdentifier: "EntryStreamTableViewCell")! as! EntryStreamTableViewCell
-        let entryResponse = entryResponses[indexPath.row]
-        cell.configureFor(entryResponse)
+        let response = EntryManager.shared.record(for: entryIds[indexPath.row]).response!
+        cell.configureFor(response)
         cell.delegate = self
         return cell
     }
@@ -101,20 +110,8 @@ class EntryStreamViewController : UIViewController, UITableViewDelegate, UIScrol
                 tableView.deselectRow(at: indexPath, animated: false)
             } else {
                 
-                // Load up details - this would trigger an ajax call and reload asynchronously.
-                var entryResponse = entryResponses[indexPath.row]
-                if (entryResponse.details == nil) {
-                    let details = EntryDetails()
-                    entryResponse.details = details
-                    entryResponses[indexPath.row] = entryResponse
-                    
-                    // Pretend this in an ajax call.
-                    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-                        if let cell = tableView.cellForRow(at: indexPath) {
-                            (cell as! EntryStreamTableViewCell).configureFor(entryResponse)
-                        }
-                    }
-                }
+                // Ask the EntryManager to update the record; this may trigger `entryUpdated()`.
+                _ = EntryManager.shared.updateRecord(for: entryIds[indexPath.row])
                 path = indexPath
             }
         }
@@ -155,6 +152,27 @@ class EntryStreamViewController : UIViewController, UITableViewDelegate, UIScrol
         // Pretend this in an ajax call.
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.entryTableView.refreshControl?.endRefreshing()
+        }
+    }
+    
+    // ! Notifications
+    
+    
+    @objc func entryUpdated(notification : Notification) {
+        
+        // Get the entry ID and verify that its in the list of IDs.
+        let id = notification.userInfo!["id"] as! Int
+        if let row = entryIds.index(of: id) {
+            
+            // Attempt to get the cell that corresponds to the entry.
+            let indexPath = IndexPath(row: row, section: 0)
+            if let cell = entryTableView.cellForRow(at: indexPath) {
+                
+                // Refresh the cell configuration for the updated record.
+                let record = notification.userInfo!["record"] as! EntryRecord
+                (cell as! EntryStreamTableViewCell).configureFor(record.response!)
+                
+            }
         }
     }
     

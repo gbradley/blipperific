@@ -82,7 +82,7 @@ class EntryViewController: JournalViewController, UITableViewDataSource, UITable
         if ((entry["title"] as! String) == "") {
             rowTypes.remove(at: rowTypes.index(of: .Title)!)
         }
-        if ((entry["description"] as! String) == "") {
+        if (true || (entry["description"] as! String) == "") {
             rowTypes.remove(at: rowTypes.index(of: .Description)!)
         }
         
@@ -144,7 +144,7 @@ class EntryViewController: JournalViewController, UITableViewDataSource, UITable
         } else if (rowType == RowType.Photo) {
             height = self.heightForPhoto() + 10
         } else if (rowType == RowType.Title) {
-            height = 36
+            height = 41
         } else if (rowType == RowType.Description) {
             height = self.heightForDescription() + 4
         } else if (rowType == RowType.Metadata) {
@@ -210,12 +210,29 @@ class EntryViewController: JournalViewController, UITableViewDataSource, UITable
         }
     }
     
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 35
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let entryStatisticsView = Bundle.main.loadNibNamed("EntryStatisticsView", owner: self, options: nil)![0] as! EntryStatisticsView
+        //entryStatisticsView.configureFor(entry)
+        entryStatisticsView.onActionTapped { (action) in
+            print("doing " + action)
+        }
+        return entryStatisticsView
+    }
+    
+    // ! Cell editing
+    
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return tableView == self.mainTableView && !scrollView.isScrollEnabled
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
     }
+    
+    // ! Scroll view delegate
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if (scrollView == self.mainTableView) {

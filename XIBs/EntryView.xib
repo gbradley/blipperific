@@ -96,10 +96,10 @@
                     <rect key="frame" x="5" y="20" width="365" height="44"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dev-E6-WTP" customClass="PhotoBackgroundView" customModule="Blipperific" customModuleProvider="target">
-                            <rect key="frame" x="5" y="5" width="34" height="34"/>
+                            <rect key="frame" x="3" y="5" width="34" height="34"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bpj-hT-TDW">
-                                    <rect key="frame" x="0.0" y="2" width="30" height="30"/>
+                                    <rect key="frame" x="2" y="2" width="30" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="DOy-1f-565"/>
                                         <constraint firstAttribute="width" constant="30" id="fnj-Qi-nIa"/>
@@ -110,13 +110,13 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="Bpj-hT-TDW" firstAttribute="top" secondItem="Dev-E6-WTP" secondAttribute="top" constant="2" id="QKK-zx-gS5"/>
-                                <constraint firstItem="Bpj-hT-TDW" firstAttribute="leading" secondItem="Dev-E6-WTP" secondAttribute="leading" id="WAW-Rc-VrI"/>
+                                <constraint firstItem="Bpj-hT-TDW" firstAttribute="leading" secondItem="Dev-E6-WTP" secondAttribute="leading" constant="2" id="WAW-Rc-VrI"/>
                                 <constraint firstAttribute="width" constant="34" id="Z15-8r-d8i"/>
                                 <constraint firstAttribute="height" constant="34" id="ZFu-cy-FKh"/>
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSp-77-2UU" customClass="UsernameButton" customModule="Blipperific" customModuleProvider="target">
-                            <rect key="frame" x="44" y="0.0" width="200" height="34"/>
+                            <rect key="frame" x="42" y="0.0" width="200" height="34"/>
                             <state key="normal" title="by TractorFactoryPhotos"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNq-4A-myp">
@@ -127,7 +127,7 @@
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" identifier="EntryJournalBarHeight" id="2fQ-QK-0aZ"/>
-                        <constraint firstItem="Dev-E6-WTP" firstAttribute="leading" secondItem="D4S-Fg-ERr" secondAttribute="leading" constant="5" id="HOO-vM-G2z"/>
+                        <constraint firstItem="Dev-E6-WTP" firstAttribute="leading" secondItem="D4S-Fg-ERr" secondAttribute="leading" constant="3" id="HOO-vM-G2z"/>
                         <constraint firstAttribute="bottom" secondItem="fNq-4A-myp" secondAttribute="bottom" constant="10" id="HOn-PZ-2Td"/>
                         <constraint firstItem="HSp-77-2UU" firstAttribute="leading" secondItem="Dev-E6-WTP" secondAttribute="trailing" constant="5" id="NOY-8S-dmT"/>
                         <constraint firstAttribute="trailing" secondItem="fNq-4A-myp" secondAttribute="trailing" constant="9" id="cbu-bd-f3I"/>
