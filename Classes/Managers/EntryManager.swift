@@ -49,14 +49,22 @@ class EntryManager {
         return record!
     }
     
-    // Return a record for an entry ID, and if needed, request updates.
-    func updateRecord (for id : Int, overwrite : Bool = false) -> EntryRecord {
+    // Request a record update if needed, and return whether to expect an update.
+    func updateRecord (for id : Int, overwrite : Bool = false) -> Bool {
         let record = self.record(for: id)
-        if (overwrite || record.dataStatus != .Complete && record.fetchStatus != .Pending) {
-            self.fetchRecord(for: id)
+        var willUpdate = false
+        
+        if (overwrite || record.dataStatus != .Complete) {
+            
+            willUpdate = true
+            
+            // Even if `willUpdate` is true, we only send the request if there's no request pending.
+            if (record.fetchStatus != .Pending) {
+                self.fetchRecord(for: id)
+            }
         }
         
-        return record
+        return willUpdate
     }
     
     // Determine if the manager has a complete record for an ID.

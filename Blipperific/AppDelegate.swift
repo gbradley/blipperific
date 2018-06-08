@@ -88,6 +88,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    // Return an environment variable from the xcconfig file.
+    func env(_ key: String) -> String {
+        return ((Bundle.main.infoDictionary?[key] as? String)?
+            .replacingOccurrences(of: "\\", with: ""))!
+    }
 }
 

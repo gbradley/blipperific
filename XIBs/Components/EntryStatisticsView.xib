@@ -41,9 +41,11 @@
                                             <fontDescription key="fontDescription" name="FontAwesome5FreeRegular" family="Font Awesome 5 Free" pointSize="17"/>
                                             <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             <state key="normal" title=""/>
+                                            <connections>
+                                                <action selector="actionButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="IcD-ZL-af7"/>
+                                            </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.85882352939999995" green="0.35294117650000001" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="ykP-1R-gYa" secondAttribute="trailing" id="1W3-0J-KZu"/>
                                         <constraint firstItem="ykP-1R-gYa" firstAttribute="top" secondItem="0Wj-uH-JhV" secondAttribute="top" id="55I-3U-b4B"/>
@@ -69,9 +71,11 @@
                                             <fontDescription key="fontDescription" name="FontAwesome5FreeRegular" family="Font Awesome 5 Free" pointSize="17"/>
                                             <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             <state key="normal" title=""/>
+                                            <connections>
+                                                <action selector="actionButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="EmD-hv-bnP"/>
+                                            </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.85882352939999995" green="0.35294117650000001" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstItem="mZC-Iv-G0w" firstAttribute="centerY" secondItem="47K-4B-9H3" secondAttribute="centerY" id="PRh-I6-Ncw"/>
                                         <constraint firstItem="mZC-Iv-G0w" firstAttribute="leading" secondItem="47K-4B-9H3" secondAttribute="leading" constant="27" id="Tg9-GB-JLS"/>
@@ -96,9 +100,11 @@
                                             <fontDescription key="fontDescription" name="FontAwesome5FreeRegular" family="Font Awesome 5 Free" pointSize="17"/>
                                             <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             <state key="normal" title=""/>
+                                            <connections>
+                                                <action selector="actionButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="fMf-PD-Hm8"/>
+                                            </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.85882352939999995" green="0.35294117650000001" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="ZD9-uD-cWw" secondAttribute="bottom" id="2MI-kO-stL"/>
                                         <constraint firstAttribute="trailing" secondItem="ZD9-uD-cWw" secondAttribute="trailing" id="HPp-bA-BcU"/>
@@ -123,9 +129,11 @@
                                             <fontDescription key="fontDescription" name="FontAwesome5FreeRegular" family="Font Awesome 5 Free" pointSize="17"/>
                                             <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             <state key="normal" title=""/>
+                                            <connections>
+                                                <action selector="actionButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="o0w-nh-TqA"/>
+                                            </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.85882352939999995" green="0.35294117650000001" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstItem="eIR-jm-rY6" firstAttribute="top" secondItem="shb-zO-vB7" secondAttribute="top" id="EbX-Uy-sji"/>
                                         <constraint firstItem="hgT-5Z-Tk4" firstAttribute="centerY" secondItem="shb-zO-vB7" secondAttribute="centerY" id="IeH-fT-qoi"/>
@@ -174,6 +182,15 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="commentButton" destination="eIR-jm-rY6" id="R2q-XW-ExJ"/>
+                <outlet property="commentCountLabel" destination="hgT-5Z-Tk4" id="WcN-Hf-eXZ"/>
+                <outlet property="favouriteButton" destination="ZD9-uD-cWw" id="5t9-ci-JB2"/>
+                <outlet property="favouriteCountLabel" destination="uv8-is-nr5" id="VWq-f1-TFr"/>
+                <outlet property="starButton" destination="inI-HN-jaN" id="3HL-lg-lCz"/>
+                <outlet property="starCountLabel" destination="mZC-Iv-G0w" id="kCc-E7-zYj"/>
+                <outlet property="viewCountLabel" destination="A13-DZ-Ehr" id="1eH-vU-U7K"/>
+            </connections>
         </view>
     </objects>
 </document>

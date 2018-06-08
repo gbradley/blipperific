@@ -139,9 +139,8 @@ class EntryStreamViewController : UIViewController, UITableViewDelegate, UIScrol
                 }
                 
                 // Launch the entry controller.
-                let entryViewController = EntryViewController(nibName: "EntryView", bundle: nil)
+                let entryViewController = EntryViewController(id : entryIds[indexPath.row], nibName: "EntryView", bundle: nil)
                 self.presentJournalController(entryViewController)
-                
             }
         }
     }

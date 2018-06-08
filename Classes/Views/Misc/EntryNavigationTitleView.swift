@@ -16,8 +16,6 @@ class EntryNavigationTitleView : UIView {
     @IBOutlet var usernameButton : UIButton!
     
     override var intrinsicContentSize: CGSize {
-        
-        
         let width = max(titleLabel.frame.size.width, usernameButton.frame.size.width + usernameButton.contentEdgeInsets.left + usernameButton.contentEdgeInsets.right)
         return CGSize(width: width, height: 44)
     }
@@ -37,6 +35,8 @@ class EntryNavigationTitleView : UIView {
         usernameButton.setTitleColor(currentTheme.textColor, for: .normal)
         usernameButton.titleLabel?.font = UIFont.init(name: (currentTheme.fontName)!, size: 15)
         usernameButton.sizeToFit()
+        
+        self.invalidateIntrinsicContentSize()
     }
     
 }

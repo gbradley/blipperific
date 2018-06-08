@@ -5,6 +5,7 @@
 //  Created by Graham on 07/06/2018.
 //  Copyright © 2018 GMB Technology. All rights reserved.
 //
+//  This class displays the various view / star / fave / comment counts and buttons for an entry.
 
 import UIKit
 

@@ -30,6 +30,12 @@ class EntryViewController: JournalViewController, UITableViewDataSource, UITable
     var entryDescriptionHeightForWidth : [CGFloat:CGFloat] = [:]
     var entryPhotoHeightForWidth : [CGFloat:CGFloat] = [:]
     
+    enum SectionType : Int {
+        case Summary = 0
+        case Detail = 1
+        case Comments = 2
+    }
+    
     enum RowType : Int {
         case Spacer = 0
         case Photo = 1
@@ -39,7 +45,11 @@ class EntryViewController: JournalViewController, UITableViewDataSource, UITable
         case Other = 5
     }
     
-    var rowTypes : [RowType] = [.Spacer, .Photo, .Title, .Description, .Metadata]
+    var id : Int!
+    var sections : [SectionType] = []
+    var rows : [SectionType : [RowType]] = [:]
+    var entryStatisticsView : EntryStatisticsView?
+    var expectsUpdates : Bool = false
     
     var data = [0, 1, 2]
     
@@ -50,6 +60,22 @@ class EntryViewController: JournalViewController, UITableViewDataSource, UITable
         "description" : "Failed!",
         "description_html" : "Lorem ipsum dolor amet <b>subway</b> tile gochujang <a href='https://www.google.com'>flat white<a> synth. Small batch hot chicken meggings, literally palo santo vexillologist drinking vinegar meditation godard next level. Synth VHS meh, lyft offal blog bicycle rights man braid skateboard freegan truffaut sartorial selfies jianbing viral. PBR&B bicycle rights meh, messenger bag YOLO ethical meditation typewriter godard squid microdosing glossier kinfolk swag single-origin coffee. Tofu squid echo park skateboard pitchfork hoodie mustache marfa artisan banh mi narwhal. Brunch asymmetrical master cleanse, pitchfork kinfolk af mumblecore neutra hella. Man braid etsy lomo quinoa street art scenester neutra kickstarter franzen +1 iceland.<br /><br />Pop-up fanny pack shabby chic, kale chips live-edge glossier cardigan cornhole fixie YOLO waistcoat literally. Narwhal pickled snackwave ethical food truck bicycle rights. Pabst af keffiyeh chartreuse leggings aesthetic health goth subway tile hell of succulents marfa bespoke sustainable. Cardigan ramps brooklyn offal, roof party neutra literally +1 kale chips air plant affogato actually messenger bag austin poke. Gastropub bespoke freegan lomo pitchfork meggings helvetica synth sriracha actually cloud bread occupy mlkshk. Health goth keffiyeh pork belly, normcore chia brooklyn disrupt activated charcoal schlitz green juice tote bag vegan blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah."
         ]
+    
+    var response : EntryResponse?
+    
+    convenience init(id : Int, nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        self.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+        // Set the ID.
+        self.id = id
+        
+        // Listen for entry updates.
+        NotificationCenter.default.addObserver(self, selector: #selector(self.entryRecordUpdated), name: .entryManagerDidUpdateRecord, object: nil)
+        
+        // Get the response for the ID, which may request more info in the background and call `entryRecordUpdated()`.
+        self.response = EntryManager.shared.record(for: id).response
+        self.expectsUpdates = EntryManager.shared.updateRecord(for: id)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,23 +96,71 @@ class EntryViewController: JournalViewController, UITableViewDataSource, UITable
         rightTableView.separatorStyle = .none
         rightTableView.register(photoCellNib, forCellReuseIdentifier: "EntryTableViewPhotoCell")
         
+        self.configureTitles()
+        _ = self.configureSections()
+        self.registerConstraints()
+    }
+    
+    // Configure the navigation tiles and buttons based on the stored response.
+    func configureTitles() {
+        
+        var username : String = ""
+        var journalTitle : String = ""
+        var dateStr : String = ""
+        
+        if let response = self.response {
+            username = response.entry.username
+            dateStr = String(response.entry.date_stamp)
+            
+            if let details = response.details {
+                journalTitle = details.journal_title
+            }
+        }
+        
         // Configure the title.
-        self.title = "Tractor Factory Photos"
-        self.setCustomNavigationTitle()
+        self.title = username
+        self.setCustomNavigation(title: journalTitle, dateStr: dateStr, username: username)
         
         // Configure the journal bar.
-        self.journalUsernameButton.setTitle("by TractorFactoryPhotos", for: .normal)
+        self.journalUsernameButton.setTitle(username == "" ? "" : "by " + username, for: .normal)
         self.journalUsernameButton.sizeToFit()
-        
-        // Configure the datasource.
-        if ((entry["title"] as! String) == "") {
-            rowTypes.remove(at: rowTypes.index(of: .Title)!)
+    }
+    
+    // Configure the table sections based on the stored response, and return indexes of any new sections.
+    func configureSections() -> [Int] {
+        var insertSections : [Int] = []
+        if let response = self.response {
+            
+            if (!sections.contains(.Summary)) {
+                insertSections.append(sections.count)
+                sections.append(.Summary)
+                
+                rows[.Summary] = [.Spacer, .Photo]
+                
+                // Add the title if its non-empty.
+                if (response.entry.title != "") {
+                    rows[.Summary]!.append(.Title)
+                }
+            }
+            
+            if response.details != nil {
+                
+                if (!sections.contains(.Detail)) {
+                    insertSections.append(sections.count)
+                    sections.append(.Detail)
+                    
+                    rows[.Detail] = []
+                    
+                    // Add the description if its non-empty.
+                    if (response.entry.title != "") {
+                        rows[.Detail]!.append(.Description)
+                    }
+                    
+                    rows[.Detail]!.append(.Metadata)
+                }
+            }
         }
-        if (true || (entry["description"] as! String) == "") {
-            rowTypes.remove(at: rowTypes.index(of: .Description)!)
-        }
-        
-        self.registerConstraints()
+        return insertSections
     }
     
     func registerConstraints() {
@@ -106,10 +180,12 @@ class EntryViewController: JournalViewController, UITableViewDataSource, UITable
     }
     
     // Create a custom view to replace the default navigation title.
-    func setCustomNavigationTitle() {
-        let entryNavigationTitleView = Bundle.main.loadNibNamed("EntryNavigationTitleView", owner: self, options: nil)![0] as! EntryNavigationTitleView
-        entryNavigationTitleView.configure(title: self.title!, date: "3rd June 2018", username: "TractorFactoryPhotos")
-        self.navigationItem.titleView = entryNavigationTitleView
+    func setCustomNavigation(title : String, dateStr : String, username : String) {
+        if (self.navigationItem.titleView == nil) {
+            self.navigationItem.titleView = Bundle.main.loadNibNamed("EntryNavigationTitleView", owner: self, options: nil)![0] as! EntryNavigationTitleView
+            self.navigationItem.titleView?.isHidden = self.expectsUpdates
+        }
+        (self.navigationItem.titleView as! EntryNavigationTitleView).configure(title: title, date: dateStr, username: username)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -122,16 +198,22 @@ class EntryViewController: JournalViewController, UITableViewDataSource, UITable
     
     func rowType(at indexPath : IndexPath) -> RowType {
         var rowType : RowType!
-        if (indexPath.row < rowTypes.count) {
-            rowType = rowTypes[indexPath.row]
+        let section = sections[indexPath.section]
+        if (indexPath.row < rows[section]!.count) {
+            rowType = rows[section]![indexPath.row]
         } else {
             rowType = .Other
         }
         return rowType
     }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return tableView == self.mainTableView ? sections.count : 1
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (tableView == self.mainTableView ? rowTypes.count : 2)
+        let sectionType = sections[section]
+        return tableView == self.mainTableView ? rows[sectionType]!.count : 3
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -178,12 +260,13 @@ class EntryViewController: JournalViewController, UITableViewDataSource, UITable
     
     func getPhotoCell() -> EntryTableViewPhotoCell {
         let cell = mainTableView.dequeueReusableCell(withIdentifier: "EntryTableViewPhotoCell") as! EntryTableViewPhotoCell
+        cell.photoImageView.sd_setImage(with: URL(string: response!.entry.image_url), completed: nil)
         return cell
     }
     
     func getTitleCell() -> EntryTableViewTitleCell {
         let cell = mainTableView.dequeueReusableCell(withIdentifier: "EntryTableViewTitleCell") as! EntryTableViewTitleCell
-        cell.titleLabel.text = entry["title"] as? String
+        cell.titleLabel.text = response!.entry.title
         return cell
     }
     
@@ -211,16 +294,31 @@ class EntryViewController: JournalViewController, UITableViewDataSource, UITable
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 35
+        let sectionType = sections[section]
+        return sectionType == .Detail ? 35 : 0
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let entryStatisticsView = Bundle.main.loadNibNamed("EntryStatisticsView", owner: self, options: nil)![0] as! EntryStatisticsView
-        //entryStatisticsView.configureFor(entry)
-        entryStatisticsView.onActionTapped { (action) in
-            print("doing " + action)
+        var view : UIView?
+        let sectionType = sections[section]
+        
+        if (sectionType == .Detail) {
+            
+            // Create an instance of the statistics view as the footer.
+            let statisticsView = Bundle.main.loadNibNamed("EntryStatisticsView", owner: self, options: nil)![0] as! EntryStatisticsView
+            statisticsView.configureFor(response!)
+            statisticsView.onActionTapped { (action) in
+                print("doing " + action)
+            }
+            
+            // If updates are expected, hide the statistics view, otherwise just show it immediately.
+            statisticsView.isHidden = self.expectsUpdates
+            
+            // Store a reference to the view so we can access it later (the table's `footerView` method only works with HeaderFooterViews).
+            self.entryStatisticsView = statisticsView
+            view = statisticsView
         }
-        return entryStatisticsView
+        return view
     }
     
     // ! Cell editing
@@ -313,7 +411,7 @@ class EntryViewController: JournalViewController, UITableViewDataSource, UITable
         let width = self.view.frame.size.width
         var height = entryPhotoHeightForWidth[width]
         if (height == nil) {
-            height = fabs((width - 20) * CGFloat(entry["image_ratio"] as! Double))
+            height = fabs((width - 20) / CGFloat(response!.entry.image_aspect_ratio!))
             entryPhotoHeightForWidth[width] = height
         }
         
@@ -338,9 +436,39 @@ class EntryViewController: JournalViewController, UITableViewDataSource, UITable
     
     func attributedDescription() -> NSAttributedString {
         if (entryDescription == nil) {
-            entryDescription = (entry["description_html"] as! String).attributedHTML(fallback: entry["description"] as! String)
+            entryDescription = (response!.details!.description_html).attributedHTML(fallback: response!.details!.description)
         }
         return entryDescription
+    }
+    
+    // ! Notifications
+    
+    @objc func entryRecordUpdated(notification : Notification) {
+        if (self.id == (notification.userInfo!["id"] as! Int)) {
+            
+            // Update the stored response.
+            self.response = (notification.userInfo!["record"] as! EntryRecord).response!
+            
+            // Reconfigure the titles and table sections.
+            self.configureTitles()
+            self.mainTableView.insertSections(IndexSet(self.configureSections()), with: .fade)
+            
+            // Because row animations aren't applied to section footers, wait until the section is inserted before displaying the footer manually.
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                
+                let footerView = self.entryStatisticsView!
+                let titleView = self.navigationItem.titleView!
+                
+                footerView.alpha = 0
+                footerView.isHidden = false
+                titleView.alpha = 0
+                titleView.isHidden = false
+                UIView.animate(withDuration: 0.1, animations: {
+                    footerView.alpha = 1
+                    titleView.alpha = 1
+                })
+            }
+        }
     }
     
 }

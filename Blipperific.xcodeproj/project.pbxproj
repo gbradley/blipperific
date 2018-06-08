@@ -73,6 +73,9 @@
 		BFBCCEB120C918ED00C13EA3 /* EntryStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBCCEB020C918ED00C13EA3 /* EntryStatisticsView.swift */; };
 		BFBCCEB320C9191900C13EA3 /* EntryStatisticsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFBCCEB220C9191900C13EA3 /* EntryStatisticsView.xib */; };
 		BFBCCEB620C91E7500C13EA3 /* EntryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBCCEB520C91E7500C13EA3 /* EntryManager.swift */; };
+		BFBCCEBB20CA733C00C13EA3 /* JSONApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBCCEBA20CA733C00C13EA3 /* JSONApi.swift */; };
+		BFBCCEBD20CA73C000C13EA3 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBCCEBC20CA73C000C13EA3 /* ApiError.swift */; };
+		BFBCCEBF20CA76C000C13EA3 /* BlipfotoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBCCEBE20CA76C000C13EA3 /* BlipfotoApi.swift */; };
 		BFF200CD20B860990074AF5C /* EntryNavigationTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF200CC20B860990074AF5C /* EntryNavigationTitleView.swift */; };
 		BFF200CF20B8615A0074AF5C /* EntryNavigationTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF200CE20B8615A0074AF5C /* EntryNavigationTitleView.xib */; };
 		BFF200D620BAD18D0074AF5C /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF200D520BAD18D0074AF5C /* EntryViewController.swift */; };
@@ -151,6 +154,9 @@
 		BFBCCEB020C918ED00C13EA3 /* EntryStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryStatisticsView.swift; sourceTree = "<group>"; };
 		BFBCCEB220C9191900C13EA3 /* EntryStatisticsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryStatisticsView.xib; sourceTree = "<group>"; };
 		BFBCCEB520C91E7500C13EA3 /* EntryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryManager.swift; sourceTree = "<group>"; };
+		BFBCCEBA20CA733C00C13EA3 /* JSONApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONApi.swift; sourceTree = "<group>"; };
+		BFBCCEBC20CA73C000C13EA3 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		BFBCCEBE20CA76C000C13EA3 /* BlipfotoApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlipfotoApi.swift; sourceTree = "<group>"; };
 		BFF200CC20B860990074AF5C /* EntryNavigationTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryNavigationTitleView.swift; sourceTree = "<group>"; };
 		BFF200CE20B8615A0074AF5C /* EntryNavigationTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryNavigationTitleView.xib; sourceTree = "<group>"; };
 		BFF200D520BAD18D0074AF5C /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +196,7 @@
 		BF4B3346209101C5000262F8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BFBCCEB920CA733200C13EA3 /* Services */,
 				BFBCCEB420C91E6900C13EA3 /* Managers */,
 				BF9F35882090E2EE00355585 /* View Controllers */,
 				BF4B3347209101CB000262F8 /* Themes */,
@@ -287,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				BF8B4DCF2093116B00BAD163 /* Entry.swift */,
+				BFBCCEBC20CA73C000C13EA3 /* ApiError.swift */,
 			);
 			path = Structs;
 			sourceTree = "<group>";
@@ -373,6 +381,15 @@
 				BFBCCEB520C91E7500C13EA3 /* EntryManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		BFBCCEB920CA733200C13EA3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BFBCCEBA20CA733C00C13EA3 /* JSONApi.swift */,
+				BFBCCEBE20CA76C000C13EA3 /* BlipfotoApi.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		BFF200D020B869C20074AF5C /* Components */ = {
@@ -544,10 +561,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Blipperific/Pods-Blipperific-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -583,6 +602,8 @@
 				BF4B33822091CA4E000262F8 /* BrowseTableViewCell.swift in Sources */,
 				BF4B33412090FA6B000262F8 /* Theme.swift in Sources */,
 				BFBCCEAF20C6FBB800C13EA3 /* SecondaryButton.swift in Sources */,
+				BFBCCEBB20CA733C00C13EA3 /* JSONApi.swift in Sources */,
+				BFBCCEBF20CA76C000C13EA3 /* BlipfotoApi.swift in Sources */,
 				BFBCCE9F20C6EBC700C13EA3 /* EntryTableViewPhotoCell.swift in Sources */,
 				BF2CCCCD209A045F004598B8 /* StatisticButton.swift in Sources */,
 				BF4B334920910271000262F8 /* HeadingLabel.swift in Sources */,
@@ -592,6 +613,7 @@
 				BF7C3D9A2090D28500DF0689 /* AppDelegate.swift in Sources */,
 				BF56B1602099D97F00BFF4EC /* UIViewController+BackButton.swift in Sources */,
 				BF9F358B2090E33200355585 /* TemplateView.swift in Sources */,
+				BFBCCEBD20CA73C000C13EA3 /* ApiError.swift in Sources */,
 				BFBCCEB620C91E7500C13EA3 /* EntryManager.swift in Sources */,
 				BF4B33882091D06E000262F8 /* EntryCollectionViewCell.swift in Sources */,
 				BF5AA3A420933EAA00FFFF57 /* DisclosureButton.swift in Sources */,
