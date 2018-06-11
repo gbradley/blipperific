@@ -13,7 +13,7 @@
 		BF2CCCCF209A2BF5004598B8 /* Int+Abbreviation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2CCCCE209A2BF5004598B8 /* Int+Abbreviation.swift */; };
 		BF2CCCD1209A5EB3004598B8 /* UsernameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2CCCD0209A5EB3004598B8 /* UsernameButton.swift */; };
 		BF3D294920B8428700C139CA /* UIViewController+Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3D294820B8428700C139CA /* UIViewController+Journal.swift */; };
-		BF3D294D20B846FD00C139CA /* JournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3D294C20B846FD00C139CA /* JournalViewController.swift */; };
+		BF3D294D20B846FD00C139CA /* JournalExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3D294C20B846FD00C139CA /* JournalExploreViewController.swift */; };
 		BF4B333F2090F716000262F8 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B333E2090F716000262F8 /* UIColor+Hex.swift */; };
 		BF4B33412090FA6B000262F8 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B33402090FA6B000262F8 /* Theme.swift */; };
 		BF4B33432090FADC000262F8 /* WhiteTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B33422090FADB000262F8 /* WhiteTheme.swift */; };
@@ -79,7 +79,10 @@
 		BFF200CD20B860990074AF5C /* EntryNavigationTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF200CC20B860990074AF5C /* EntryNavigationTitleView.swift */; };
 		BFF200CF20B8615A0074AF5C /* EntryNavigationTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF200CE20B8615A0074AF5C /* EntryNavigationTitleView.xib */; };
 		BFF200D620BAD18D0074AF5C /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF200D520BAD18D0074AF5C /* EntryViewController.swift */; };
-		BFF200D820BAD1B30074AF5C /* EntryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF200D720BAD1B30074AF5C /* EntryView.xib */; };
+		BFFDD35520CED9030035AC5F /* JournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFDD35420CED9030035AC5F /* JournalViewController.swift */; };
+		BFFDD35920CEDD0C0035AC5F /* JournalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFFDD35820CEDD0C0035AC5F /* JournalView.xib */; };
+		BFFDD35F20CEECCF0035AC5F /* EntryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFFDD35E20CEECCF0035AC5F /* EntryView.xib */; };
+		BFFDD36120CEFB770035AC5F /* EntryFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFDD36020CEFB770035AC5F /* EntryFormatter.swift */; };
 		C900C852D1F1267F3B012BFF /* Pods_Blipperific.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F04356162D284285FE7AEB14 /* Pods_Blipperific.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,7 +95,7 @@
 		BF2CCCCE209A2BF5004598B8 /* Int+Abbreviation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Abbreviation.swift"; sourceTree = "<group>"; };
 		BF2CCCD0209A5EB3004598B8 /* UsernameButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameButton.swift; sourceTree = "<group>"; };
 		BF3D294820B8428700C139CA /* UIViewController+Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Journal.swift"; sourceTree = "<group>"; };
-		BF3D294C20B846FD00C139CA /* JournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewController.swift; sourceTree = "<group>"; };
+		BF3D294C20B846FD00C139CA /* JournalExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalExploreViewController.swift; sourceTree = "<group>"; };
 		BF4B333E2090F716000262F8 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		BF4B33402090FA6B000262F8 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		BF4B33422090FADB000262F8 /* WhiteTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteTheme.swift; sourceTree = "<group>"; };
@@ -160,7 +163,10 @@
 		BFF200CC20B860990074AF5C /* EntryNavigationTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryNavigationTitleView.swift; sourceTree = "<group>"; };
 		BFF200CE20B8615A0074AF5C /* EntryNavigationTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryNavigationTitleView.xib; sourceTree = "<group>"; };
 		BFF200D520BAD18D0074AF5C /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
-		BFF200D720BAD1B30074AF5C /* EntryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryView.xib; sourceTree = "<group>"; };
+		BFFDD35420CED9030035AC5F /* JournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewController.swift; sourceTree = "<group>"; };
+		BFFDD35820CEDD0C0035AC5F /* JournalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JournalView.xib; sourceTree = "<group>"; };
+		BFFDD35E20CEECCF0035AC5F /* EntryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryView.xib; sourceTree = "<group>"; };
+		BFFDD36020CEFB770035AC5F /* EntryFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryFormatter.swift; sourceTree = "<group>"; };
 		F04356162D284285FE7AEB14 /* Pods_Blipperific.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Blipperific.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -197,7 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				BFBCCEB920CA733200C13EA3 /* Services */,
-				BFBCCEB420C91E6900C13EA3 /* Managers */,
+				BFBCCEB420C91E6900C13EA3 /* Managers & Helpers */,
 				BF9F35882090E2EE00355585 /* View Controllers */,
 				BF4B3347209101CB000262F8 /* Themes */,
 				BF9F35872090E2E800355585 /* Views */,
@@ -316,8 +322,9 @@
 				BF7C3D9B2090D28500DF0689 /* BrowseViewController.swift */,
 				BF4B338920923B4A000262F8 /* EntryStreamViewController.swift */,
 				BF4B334D2091242F000262F8 /* SettingsViewController.swift */,
+				BFFDD35420CED9030035AC5F /* JournalViewController.swift */,
 				BFF200D520BAD18D0074AF5C /* EntryViewController.swift */,
-				BF3D294C20B846FD00C139CA /* JournalViewController.swift */,
+				BF3D294C20B846FD00C139CA /* JournalExploreViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -327,7 +334,8 @@
 			children = (
 				BF7C3DAB2090D3C200DF0689 /* BrowseView.xib */,
 				BF4B334F209124B7000262F8 /* SettingsView.xib */,
-				BFF200D720BAD1B30074AF5C /* EntryView.xib */,
+				BFFDD35E20CEECCF0035AC5F /* EntryView.xib */,
+				BFFDD35820CEDD0C0035AC5F /* JournalView.xib */,
 				BFF200D020B869C20074AF5C /* Components */,
 				BF4B338B20923B71000262F8 /* EntryStreamView.xib */,
 				BF4B33792091C69C000262F8 /* Tables & Cells */,
@@ -375,12 +383,13 @@
 			path = Roboto;
 			sourceTree = "<group>";
 		};
-		BFBCCEB420C91E6900C13EA3 /* Managers */ = {
+		BFBCCEB420C91E6900C13EA3 /* Managers & Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				BFBCCEB520C91E7500C13EA3 /* EntryManager.swift */,
+				BFFDD36020CEFB770035AC5F /* EntryFormatter.swift */,
 			);
-			path = Managers;
+			path = "Managers & Helpers";
 			sourceTree = "<group>";
 		};
 		BFBCCEB920CA733200C13EA3 /* Services */ = {
@@ -505,6 +514,7 @@
 				BF9F35A42090E81300355585 /* Roboto-LightItalic.ttf in Resources */,
 				BF9F35AA2090E81300355585 /* Roboto-Black.ttf in Resources */,
 				BF4B33782091B0EA000262F8 /* TabBar.xib in Resources */,
+				BFFDD35920CEDD0C0035AC5F /* JournalView.xib in Resources */,
 				BF9F35A72090E81300355585 /* Roboto-BlackItalic.ttf in Resources */,
 				BFBCCEB320C9191900C13EA3 /* EntryStatisticsView.xib in Resources */,
 				BFF200CF20B8615A0074AF5C /* EntryNavigationTitleView.xib in Resources */,
@@ -520,8 +530,8 @@
 				BF9F359F2090E81300355585 /* Roboto-Light.ttf in Resources */,
 				BF9F35A12090E81300355585 /* Roboto-MediumItalic.ttf in Resources */,
 				BF56B1622099E7EA00BFF4EC /* FontAwesomeFreeSolid.otf in Resources */,
-				BFF200D820BAD1B30074AF5C /* EntryView.xib in Resources */,
 				BF7C3DA42090D28700DF0689 /* LaunchScreen.storyboard in Resources */,
+				BFFDD35F20CEECCF0035AC5F /* EntryView.xib in Resources */,
 				BF9F35A22090E81300355585 /* Roboto-ThinItalic.ttf in Resources */,
 				BFBCCEA920C6ED8F00C13EA3 /* EntryTableViewDescriptionCell.xib in Resources */,
 				BF4B33802091CA3F000262F8 /* BrowseTableViewCell.xib in Resources */,
@@ -581,6 +591,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFFDD36120CEFB770035AC5F /* EntryFormatter.swift in Sources */,
 				BF7C3D9C2090D28500DF0689 /* BrowseViewController.swift in Sources */,
 				BF4B33432090FADC000262F8 /* WhiteTheme.swift in Sources */,
 				BFF200CD20B860990074AF5C /* EntryNavigationTitleView.swift in Sources */,
@@ -590,7 +601,7 @@
 				BF4B33452090FC6A000262F8 /* RetroTheme.swift in Sources */,
 				BF4B339220924C0D000262F8 /* TitleLabel.swift in Sources */,
 				BFBCCEAB20C6F86000C13EA3 /* EntryTableViewMetadataCell.swift in Sources */,
-				BF3D294D20B846FD00C139CA /* JournalViewController.swift in Sources */,
+				BF3D294D20B846FD00C139CA /* JournalExploreViewController.swift in Sources */,
 				BF56B15C2099B7AD00BFF4EC /* BackButton.swift in Sources */,
 				BFF200D620BAD18D0074AF5C /* EntryViewController.swift in Sources */,
 				BF4B338E20924380000262F8 /* EntryStreamTableViewCell.swift in Sources */,
@@ -605,6 +616,7 @@
 				BFBCCEBB20CA733C00C13EA3 /* JSONApi.swift in Sources */,
 				BFBCCEBF20CA76C000C13EA3 /* BlipfotoApi.swift in Sources */,
 				BFBCCE9F20C6EBC700C13EA3 /* EntryTableViewPhotoCell.swift in Sources */,
+				BFFDD35520CED9030035AC5F /* JournalViewController.swift in Sources */,
 				BF2CCCCD209A045F004598B8 /* StatisticButton.swift in Sources */,
 				BF4B334920910271000262F8 /* HeadingLabel.swift in Sources */,
 				BF8B4DCE20930BCF00BAD163 /* PhotoBackgroundView.swift in Sources */,

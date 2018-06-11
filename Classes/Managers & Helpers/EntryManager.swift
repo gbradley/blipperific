@@ -88,4 +88,5 @@ class EntryManager {
             NotificationCenter.default.post(name: .entryManagerDidUpdateRecord, object: nil, userInfo: ["id" : id, "record" : record])
         }
     }
+    
 }

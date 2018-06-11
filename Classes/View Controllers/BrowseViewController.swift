@@ -117,8 +117,8 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let entryViewController = EntryViewController(id : entryIds[indexPath.row], nibName: "EntryView", bundle: nil)
-        self.presentJournalController(entryViewController)
+        let journalViewController = JournalViewController(id : entryIds[indexPath.row], nibName: "JournalView", bundle: nil)
+        self.presentJournalController(journalViewController)
         
     }
     

@@ -19,28 +19,25 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i2i-HF-yjp" customClass="PhotoBackgroundView" customModule="Blipperific" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="41.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="40.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="hRp-tE-RIz">
-                        <rect key="frame" x="10" y="10.5" width="355" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="21" id="ome-hP-mXw"/>
-                        </constraints>
+                        <rect key="frame" x="10" y="10" width="355" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="i2i-HF-yjp" secondAttribute="bottom" id="PUl-M7-yVS"/>
-                    <constraint firstAttribute="bottom" secondItem="hRp-tE-RIz" secondAttribute="bottom" constant="10" id="ROr-pS-TJz"/>
-                    <constraint firstAttribute="trailing" secondItem="hRp-tE-RIz" secondAttribute="trailing" constant="10" id="WhX-tX-rt9"/>
-                    <constraint firstItem="hRp-tE-RIz" firstAttribute="leading" secondItem="8aq-i0-WPg" secondAttribute="leading" constant="10" id="d3U-Fi-NMc"/>
-                    <constraint firstItem="i2i-HF-yjp" firstAttribute="top" secondItem="8aq-i0-WPg" secondAttribute="top" id="o1Z-ra-pQ6"/>
-                    <constraint firstItem="hRp-tE-RIz" firstAttribute="top" secondItem="8aq-i0-WPg" secondAttribute="top" constant="10" id="rB6-oB-aSj"/>
-                    <constraint firstItem="i2i-HF-yjp" firstAttribute="leading" secondItem="8aq-i0-WPg" secondAttribute="leading" id="tiR-cm-4Hf"/>
-                    <constraint firstAttribute="trailing" secondItem="i2i-HF-yjp" secondAttribute="trailing" id="x3P-ag-jmx"/>
+                    <constraint firstItem="i2i-HF-yjp" firstAttribute="leading" secondItem="8aq-i0-WPg" secondAttribute="leading" id="Ead-3W-VRd"/>
+                    <constraint firstItem="hRp-tE-RIz" firstAttribute="leading" secondItem="8aq-i0-WPg" secondAttribute="leading" constant="10" id="GV7-iv-Cg1"/>
+                    <constraint firstAttribute="trailing" secondItem="hRp-tE-RIz" secondAttribute="trailing" constant="10" id="Ixb-Jq-9zU"/>
+                    <constraint firstAttribute="bottom" secondItem="hRp-tE-RIz" secondAttribute="bottom" constant="9.5" id="Izy-3M-L9s"/>
+                    <constraint firstItem="i2i-HF-yjp" firstAttribute="top" secondItem="8aq-i0-WPg" secondAttribute="top" id="KhS-6Q-uIe"/>
+                    <constraint firstAttribute="trailing" secondItem="i2i-HF-yjp" secondAttribute="trailing" id="bxT-bZ-5Ut"/>
+                    <constraint firstAttribute="bottom" secondItem="i2i-HF-yjp" secondAttribute="bottom" id="dQR-FM-sa5"/>
+                    <constraint firstItem="hRp-tE-RIz" firstAttribute="top" secondItem="8aq-i0-WPg" secondAttribute="top" constant="10" id="zmN-7c-dVL"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
