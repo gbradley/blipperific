@@ -22,22 +22,22 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HhI-R5-mst">
-                    <rect key="frame" x="5" y="0.0" width="365" height="35"/>
+                    <rect key="frame" x="5" y="3" width="365" height="29"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i3I-aQ-ck3">
-                            <rect key="frame" x="37.5" y="0.0" width="290" height="35"/>
+                            <rect key="frame" x="37.5" y="0.0" width="290" height="29"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Wj-uH-JhV">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="35"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="29"/>
                                     <subviews>
                                         <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.3k" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A13-DZ-Ehr" customClass="StatisticLabel" customModule="Blipperific" customModuleProvider="target">
-                                            <rect key="frame" x="27" y="9" width="26" height="17"/>
+                                            <rect key="frame" x="27" y="6" width="26" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ykP-1R-gYa" customClass="StatisticButton" customModule="Blipperific" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="35"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="29"/>
                                             <fontDescription key="fontDescription" name="FontAwesome5FreeRegular" family="Font Awesome 5 Free" pointSize="17"/>
                                             <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             <state key="normal" title=""/>
@@ -58,16 +58,16 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="47K-4B-9H3">
-                                    <rect key="frame" x="80" y="0.0" width="50" height="35"/>
+                                    <rect key="frame" x="80" y="0.0" width="50" height="29"/>
                                     <subviews>
                                         <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.3k" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZC-Iv-G0w" customClass="StatisticLabel" customModule="Blipperific" customModuleProvider="target">
-                                            <rect key="frame" x="27" y="9" width="26" height="17"/>
+                                            <rect key="frame" x="27" y="6" width="26" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="inI-HN-jaN" customClass="StatisticButton" customModule="Blipperific" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="35"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="29"/>
                                             <fontDescription key="fontDescription" name="FontAwesome5FreeRegular" family="Font Awesome 5 Free" pointSize="17"/>
                                             <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             <state key="normal" title=""/>
@@ -87,16 +87,16 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V52-mG-DGT">
-                                    <rect key="frame" x="160" y="0.0" width="50" height="35"/>
+                                    <rect key="frame" x="160" y="0.0" width="50" height="29"/>
                                     <subviews>
                                         <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.3k" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uv8-is-nr5" customClass="StatisticLabel" customModule="Blipperific" customModuleProvider="target">
-                                            <rect key="frame" x="27" y="9" width="26" height="17"/>
+                                            <rect key="frame" x="27" y="6" width="26" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZD9-uD-cWw" customClass="StatisticButton" customModule="Blipperific" customModuleProvider="target">
-                                            <rect key="frame" x="-0.5" y="0.0" width="50" height="35"/>
+                                            <rect key="frame" x="-0.5" y="0.0" width="50" height="29"/>
                                             <fontDescription key="fontDescription" name="FontAwesome5FreeRegular" family="Font Awesome 5 Free" pointSize="17"/>
                                             <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             <state key="normal" title=""/>
@@ -116,16 +116,16 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="shb-zO-vB7">
-                                    <rect key="frame" x="240" y="0.0" width="50" height="35"/>
+                                    <rect key="frame" x="240" y="0.0" width="50" height="29"/>
                                     <subviews>
                                         <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.3k" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgT-5Z-Tk4" customClass="StatisticLabel" customModule="Blipperific" customModuleProvider="target">
-                                            <rect key="frame" x="27" y="9" width="26" height="17"/>
+                                            <rect key="frame" x="27" y="6" width="26" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIR-jm-rY6" customClass="StatisticButton" customModule="Blipperific" customModuleProvider="target">
-                                            <rect key="frame" x="-0.5" y="0.0" width="50" height="35"/>
+                                            <rect key="frame" x="-0.5" y="0.0" width="50" height="29"/>
                                             <fontDescription key="fontDescription" name="FontAwesome5FreeRegular" family="Font Awesome 5 Free" pointSize="17"/>
                                             <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             <state key="normal" title=""/>
@@ -168,7 +168,6 @@
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="i3I-aQ-ck3" secondAttribute="bottom" id="40T-0E-SsG"/>
                         <constraint firstItem="i3I-aQ-ck3" firstAttribute="centerX" secondItem="HhI-R5-mst" secondAttribute="centerX" id="ZOG-Dg-0wd"/>
-                        <constraint firstAttribute="height" constant="35" id="mN7-9x-aV1"/>
                         <constraint firstItem="i3I-aQ-ck3" firstAttribute="top" secondItem="HhI-R5-mst" secondAttribute="top" id="xCw-ns-KHL"/>
                     </constraints>
                 </view>
@@ -176,9 +175,8 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="HhI-R5-mst" secondAttribute="trailing" constant="5" id="198-Mv-IWe"/>
-                <constraint firstItem="HhI-R5-mst" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="85U-9I-s17"/>
+                <constraint firstItem="HhI-R5-mst" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="EQd-6p-Y7S"/>
                 <constraint firstItem="HhI-R5-mst" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="Q0E-g9-Tyi"/>
-                <constraint firstItem="HhI-R5-mst" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="flf-Vr-OA4"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
