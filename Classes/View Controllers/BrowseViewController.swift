@@ -60,13 +60,6 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
             browseTableView.deselectRow(at: browseTableView.indexPathForSelectedRow!, animated: false)
         }
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        //let overlay = UIViewController(nibName: "ErrorView", bundle: nil)
-        //self.presentOverlay(overlay)
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

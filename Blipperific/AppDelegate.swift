@@ -14,7 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
     var window: UIWindow?
     var theme: Theme!
     var tabBarController : UITabBarController!
-    var errorView : UIView!
+    
+    var errorMessageView : ErrorMessageView!
+    var errorMessageHeight : CGFloat!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -33,18 +35,59 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         // Set the inital theme.
         self.switchTheme("White")
         
-        BlipfotoApi.get(resource: "entry", params: ["entry_id" : 950355185059365496]) { (data, error) in
-            
-            //let response = EntryResponse.from(data: data!)
-            print(data, error)
-            
-        }
-        
         /*UIFont.familyNames.forEach({ familyName in
             let fontNames = UIFont.fontNames(forFamilyName: familyName)
             print(familyName, fontNames)
         })*/
         return true
+    }
+    
+    func displayErrorMessage(message : String) {
+
+        if (errorMessageView == nil) {
+            let window = UIApplication.shared.keyWindow!
+            let subview = window.subviews.first!
+            
+            let rect = message.boundingRect(with: CGSize(width: subview.frame.size.width - 20, height: 10000), options: [NSStringDrawingOptions.usesLineFragmentOrigin, NSStringDrawingOptions.usesFontLeading], attributes: [NSAttributedStringKey.font : UILabel.appearance().font], context: nil)
+            errorMessageHeight = ceil(rect.size.height) + 20
+            
+            errorMessageView = Bundle.main.loadNibNamed("ErrorMessageView", owner: self, options: nil)![0] as! ErrorMessageView
+            errorMessageView.messageLabel.text = message
+            errorMessageView.frame = CGRect(x: 0, y: subview.frame.size.height, width: 320, height: errorMessageHeight)
+            window.addSubview(errorMessageView)
+            
+            UIView.animate(withDuration: 0.3) {
+                self.errorMessageView.frame = self.errorMessageView.frame.offsetBy(dx: 0, dy: -self.errorMessageHeight)
+                
+                var frame = subview.frame
+                frame.size.height = frame.size.height - self.errorMessageHeight
+                subview.frame = frame
+            }
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                self.removeErrorMessage()
+            }
+        }
+    }
+    
+    func removeErrorMessage() {
+        
+        let window = UIApplication.shared.keyWindow!
+        let subview = window.subviews.first!
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            
+            self.errorMessageView.frame = self.errorMessageView.frame.offsetBy(dx: 0, dy: self.errorMessageHeight)
+            subview.frame = UIScreen.main.bounds
+            
+        }) { (complete) in
+            
+            self.errorMessageView.removeFromSuperview()
+            self.errorMessageView = nil
+            
+        }
+        
+        
     }
     
     // Load the brose tab into its nav controller.

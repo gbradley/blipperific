@@ -76,6 +76,11 @@ class JSONApi {
                 apiError = ApiError(code : response.response?.statusCode ?? 0, message : response.result.error?.localizedDescription ?? "An unknown error occurred.")
             }
             
+            if (apiError != nil) {
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.displayErrorMessage(message : apiError!.message)
+            }
+            
             if (callback != nil) {
                 callback!(data, apiError)
             }

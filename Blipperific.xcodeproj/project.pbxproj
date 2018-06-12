@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF0346E020D044F6009EEE01 /* ErrorMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF0346DF20D044F6009EEE01 /* ErrorMessageView.xib */; };
+		BF0346E220D04541009EEE01 /* ErrorMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0346E120D04541009EEE01 /* ErrorMessageView.swift */; };
 		BF29AD7B20A0EF22002DB4CE /* EntryStreamPaginationViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF29AD7A20A0EF22002DB4CE /* EntryStreamPaginationViewCell.xib */; };
 		BF29AD7F20A0F503002DB4CE /* FontAwesomeFreeRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF29AD7E20A0F502002DB4CE /* FontAwesomeFreeRegular.otf */; };
 		BF2CCCCD209A045F004598B8 /* StatisticButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2CCCCC209A045F004598B8 /* StatisticButton.swift */; };
@@ -89,6 +91,8 @@
 /* Begin PBXFileReference section */
 		4219FDA7C6B0C81F8F10A2E4 /* Pods-Blipperific.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blipperific.release.xcconfig"; path = "Pods/Target Support Files/Pods-Blipperific/Pods-Blipperific.release.xcconfig"; sourceTree = "<group>"; };
 		57111022F5883FA3C2677ABD /* Pods-Blipperific.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blipperific.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Blipperific/Pods-Blipperific.debug.xcconfig"; sourceTree = "<group>"; };
+		BF0346DF20D044F6009EEE01 /* ErrorMessageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorMessageView.xib; sourceTree = "<group>"; };
+		BF0346E120D04541009EEE01 /* ErrorMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessageView.swift; sourceTree = "<group>"; };
 		BF29AD7A20A0EF22002DB4CE /* EntryStreamPaginationViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryStreamPaginationViewCell.xib; sourceTree = "<group>"; };
 		BF29AD7E20A0F502002DB4CE /* FontAwesomeFreeRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesomeFreeRegular.otf; sourceTree = "<group>"; };
 		BF2CCCCC209A045F004598B8 /* StatisticButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticButton.swift; sourceTree = "<group>"; };
@@ -408,6 +412,7 @@
 				BF4B33772091B0EA000262F8 /* TabBar.xib */,
 				BFF200CE20B8615A0074AF5C /* EntryNavigationTitleView.xib */,
 				BFBCCEB220C9191900C13EA3 /* EntryStatisticsView.xib */,
+				BF0346DF20D044F6009EEE01 /* ErrorMessageView.xib */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -441,6 +446,7 @@
 				BF8B4DCD20930BCF00BAD163 /* PhotoBackgroundView.swift */,
 				BF9F358A2090E33200355585 /* TemplateView.swift */,
 				BFBCCEB020C918ED00C13EA3 /* EntryStatisticsView.swift */,
+				BF0346E120D04541009EEE01 /* ErrorMessageView.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -528,6 +534,7 @@
 				BF4B338C20923B71000262F8 /* EntryStreamView.xib in Resources */,
 				BFBCCEA120C6EC0C00C13EA3 /* EntryTableViewPhotoCell.xib in Resources */,
 				BF9F359F2090E81300355585 /* Roboto-Light.ttf in Resources */,
+				BF0346E020D044F6009EEE01 /* ErrorMessageView.xib in Resources */,
 				BF9F35A12090E81300355585 /* Roboto-MediumItalic.ttf in Resources */,
 				BF56B1622099E7EA00BFF4EC /* FontAwesomeFreeSolid.otf in Resources */,
 				BF7C3DA42090D28700DF0689 /* LaunchScreen.storyboard in Resources */,
@@ -630,6 +637,7 @@
 				BF4B33882091D06E000262F8 /* EntryCollectionViewCell.swift in Sources */,
 				BF5AA3A420933EAA00FFFF57 /* DisclosureButton.swift in Sources */,
 				BFBCCEB120C918ED00C13EA3 /* EntryStatisticsView.swift in Sources */,
+				BF0346E220D04541009EEE01 /* ErrorMessageView.swift in Sources */,
 				BF2CCCCF209A2BF5004598B8 /* Int+Abbreviation.swift in Sources */,
 				BF4B334E2091242F000262F8 /* SettingsViewController.swift in Sources */,
 			);
