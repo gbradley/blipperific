@@ -12,7 +12,7 @@ protocol EntryViewControllerDelegate {
     
     func entryViewController(_ entryViewController : EntryViewController, didScrollToY y : CGFloat)
     
-    func entryViewController(_ entryViewController : EntryViewController, didEnableCellEditiing enabled : Bool)
+    func entryViewController(_ entryViewController : EntryViewController, didEnableCellEditing enabled : Bool)
     
     func heightForJournalBar() -> CGFloat
     
@@ -45,6 +45,7 @@ class EntryViewController: JournalExploreViewController, UITableViewDataSource, 
     var entryStatisticsView : EntryStatisticsView?
     
     var cellEditing : Bool = false
+    var expectsUpdates : Bool = false
     var delegate : JournalViewController?
     
     convenience init(id : Int, nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -71,25 +72,29 @@ class EntryViewController: JournalExploreViewController, UITableViewDataSource, 
         
         entryTableView.isHidden = self.id == 0
         
+        self.expectsUpdates = self.record.dataStatus != .Complete
+        
         _ = self.configureSections()
     }
     
     func configureFor(_ id : Int) {
         
-        // If the ID has changed, reset the sections.
-        var reload = false
+        // Determine if the ID has changed.
+        let entryHasChanged = id != self.id
         
-        if (id != self.id) {
-            sections = []
-            reload = true
-        }
-        
+        // Update the ID and record.
         self.id = id
         self.record = EntryManager.shared.record(for: id)
+    
+        // If the ID has changed, reset the sections and whether we're expecting more updates.
+        if (entryHasChanged) {
+            sections = []
+            expectsUpdates = self.record.dataStatus != .Complete
+        }
         
         entryTableView.isHidden = self.id == 0
         let updateSections = self.configureSections()
-        if (reload) {
+        if (entryHasChanged) {
             entryTableView.reloadData()
         } else {
             entryTableView.insertSections(IndexSet(updateSections), with: .fade)
@@ -175,7 +180,7 @@ class EntryViewController: JournalExploreViewController, UITableViewDataSource, 
         if (rowType == RowType.Spacer) {
             height = self.delegate!.heightForJournalBar()
         } else if (rowType == RowType.Photo) {
-            height = self.heightForPhoto() + 10
+            height = self.heightForPhoto()
         } else if (rowType == RowType.Title) {
             height = 41
         } else if (rowType == RowType.Description) {
@@ -235,20 +240,20 @@ class EntryViewController: JournalExploreViewController, UITableViewDataSource, 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if (indexPath.row == RowType.Spacer.rawValue) {
             cellEditing = false
-            self.delegate?.entryViewController(self, didEnableCellEditiing: cellEditing)
+            self.delegate?.entryViewController(self, didEnableCellEditing: cellEditing)
         }
     }
     
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if (indexPath.row == RowType.Spacer.rawValue) {
             cellEditing = true
-            self.delegate?.entryViewController(self, didEnableCellEditiing: cellEditing)
+            self.delegate?.entryViewController(self, didEnableCellEditing: cellEditing)
         }
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         let sectionType = sections[section]
-        return sectionType == .Detail ? 35 : 0
+        return sectionType == .Detail ? 44 : 0
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -265,7 +270,7 @@ class EntryViewController: JournalExploreViewController, UITableViewDataSource, 
             }
             
             // If updates are expected, hide the statistics view, otherwise just show it immediately.
-            statisticsView.isHidden = record.dataStatus != .Complete
+            statisticsView.isHidden = self.expectsUpdates
             
             // Store a reference to the view so we can access it later (the table's `footerView` method only works with HeaderFooterViews).
             self.entryStatisticsView = statisticsView
@@ -326,7 +331,7 @@ class EntryViewController: JournalExploreViewController, UITableViewDataSource, 
     // Size calculations
     func heightForPhoto() -> CGFloat {
         let width = self.view.frame.size.width
-        return fabs((width - 20) / CGFloat(record.response!.entry.image_aspect_ratio!))
+        return fabs((width) / CGFloat(record.response!.entry.image_aspect_ratio!))
     }
     
     func heightForDescription() -> CGFloat {

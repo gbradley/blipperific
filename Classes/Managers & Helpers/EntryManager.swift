@@ -78,6 +78,14 @@ class EntryManager {
         var record = self.record(for: id)
         record.fetchStatus = .Pending
         
+        BlipfotoApi.get(resource: "entry", params: ["entry_id" : id]) { (data, error) in
+            
+            let response = EntryResponse.from(data: data!)
+            print(response)
+            
+        }
+    
+        
         // Fetch the data and send a notification when its done.
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
         

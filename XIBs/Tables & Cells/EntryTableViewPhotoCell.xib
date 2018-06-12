@@ -23,17 +23,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dog" translatesAutoresizingMaskIntoConstraints="NO" id="i6f-vu-EtP">
-                        <rect key="frame" x="10" y="5" width="362" height="247.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="382" height="252.5"/>
                     </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="eru-lb-0hM" firstAttribute="leading" secondItem="0LB-zk-9Mw" secondAttribute="leading" id="8ee-s8-fxU"/>
-                    <constraint firstItem="i6f-vu-EtP" firstAttribute="top" secondItem="0LB-zk-9Mw" secondAttribute="top" constant="5" id="K8E-Bq-BoB"/>
+                    <constraint firstItem="i6f-vu-EtP" firstAttribute="top" secondItem="0LB-zk-9Mw" secondAttribute="top" id="K8E-Bq-BoB"/>
                     <constraint firstAttribute="trailing" secondItem="eru-lb-0hM" secondAttribute="trailing" id="Owg-Zj-5iz"/>
                     <constraint firstItem="eru-lb-0hM" firstAttribute="top" secondItem="0LB-zk-9Mw" secondAttribute="top" id="URt-s4-geX"/>
-                    <constraint firstAttribute="trailing" secondItem="i6f-vu-EtP" secondAttribute="trailing" constant="10" id="gSh-Hh-CBg"/>
+                    <constraint firstAttribute="trailing" secondItem="i6f-vu-EtP" secondAttribute="trailing" id="gSh-Hh-CBg"/>
                     <constraint firstAttribute="bottom" secondItem="eru-lb-0hM" secondAttribute="bottom" id="hDl-bU-Ju2"/>
-                    <constraint firstItem="i6f-vu-EtP" firstAttribute="leading" secondItem="0LB-zk-9Mw" secondAttribute="leading" constant="10" id="hPF-Nl-FHc"/>
+                    <constraint firstItem="i6f-vu-EtP" firstAttribute="leading" secondItem="0LB-zk-9Mw" secondAttribute="leading" id="hPF-Nl-FHc"/>
                     <constraint firstAttribute="bottom" secondItem="i6f-vu-EtP" secondAttribute="bottom" constant="5" id="mdd-wf-1PJ"/>
                 </constraints>
             </tableViewCellContentView>

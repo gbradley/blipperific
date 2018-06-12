@@ -39,12 +39,21 @@ struct EntryDetails : Codable {
         favourites = ["total" : 0, "favourited" : 0]
         comments = ["total" : 8]
     }
+
 }
 
 struct EntryResponse : Codable {
     
     var entry : EntrySummary
     var details : EntryDetails?
+    
+    static func from(data : Data) -> EntryResponse {
+        var response : EntryResponse? = nil
+        do {
+            response = try JSONDecoder().decode(EntryResponse.self, from: data)
+        } catch {}
+        return response!
+    }
     
 }
 
@@ -53,5 +62,18 @@ struct EntryRecord : Codable {
     var fetchStatus : EntryManager.FetchStatus
     var dataStatus : EntryManager.DataStatus
     var response : EntryResponse?
+    
+}
+
+
+struct Fuck : Codable {
+ 
+    var entry : FuckSummary
+    
+}
+
+struct FuckSummary : Codable {
+    
+    var entry_id : Int
     
 }

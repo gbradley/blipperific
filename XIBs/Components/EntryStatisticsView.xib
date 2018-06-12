@@ -21,7 +21,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HhI-R5-mst">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HhI-R5-mst" customClass="TemplateView" customModule="Blipperific" customModuleProvider="target">
                     <rect key="frame" x="5" y="3" width="365" height="29"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i3I-aQ-ck3">
@@ -145,7 +145,6 @@
                                     </constraints>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="0Wj-uH-JhV" secondAttribute="bottom" id="1XB-wL-JIF"/>
                                 <constraint firstAttribute="trailing" secondItem="shb-zO-vB7" secondAttribute="trailing" id="1tI-zn-8bY"/>

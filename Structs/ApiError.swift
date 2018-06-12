@@ -17,4 +17,9 @@ struct ApiError : Codable {
         self.code = code
         self.message = message
     }
+    
+    init(json : [String : Any]) {
+        self.code = json["code"] as! Int
+        self.message = json["message"] as! String
+    }
 }

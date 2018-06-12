@@ -86,5 +86,21 @@ class EntryFormatter {
         
         return height
     }
+    
+    // Return the human-readable date of the entry.
+    static func displayDate(response : EntryResponse) -> String {
+        
+        let calendar = Calendar.current
+        let date = Date(timeIntervalSince1970: Double(response.entry.date_stamp))
+       
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .ordinal
+        let day = numberFormatter.string(from: calendar.component(.day, from: date) as NSNumber)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM yyyy"
+        
+        return "\(day!) \(dateFormatter.string(from: date))"
+    }
 
 }

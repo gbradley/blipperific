@@ -9,7 +9,7 @@
 
 import UIKit
 
-class EntryStatisticsView : UIView {
+class EntryStatisticsView : TemplateView {
     
     @IBOutlet var starButton : StatisticButton!
     @IBOutlet var favouriteButton : StatisticButton!

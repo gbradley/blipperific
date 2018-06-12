@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
     var window: UIWindow?
     var theme: Theme!
     var tabBarController : UITabBarController!
+    var errorView : UIView!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -32,11 +33,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         // Set the inital theme.
         self.switchTheme("White")
         
+        BlipfotoApi.get(resource: "entry", params: ["entry_id" : 950355185059365496]) { (data, error) in
+            
+            //let response = EntryResponse.from(data: data!)
+            print(data, error)
+            
+        }
+        
         /*UIFont.familyNames.forEach({ familyName in
             let fontNames = UIFont.fontNames(forFamilyName: familyName)
             print(familyName, fontNames)
         })*/
-        
         return true
     }
     

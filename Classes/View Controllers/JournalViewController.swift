@@ -36,6 +36,10 @@ class JournalViewController: JournalExploreViewController, UIScrollViewDelegate,
     // Create a dictionary to map entry IDs to their cursors.
     var ids : [EntryCursor : Int] = [.Previous : 0, .Current : 0, .Next : 0]
     
+    // Store the journal title. Because this doesn't get returned in the summary response, we store it as a property here so scrolling
+    // left / right can retain the title.
+    var journalTitle : String?
+    
     convenience init(id : Int, nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         self.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
@@ -94,10 +98,14 @@ class JournalViewController: JournalExploreViewController, UIScrollViewDelegate,
         if let record = self.recordFor(cursor: .Current) {
             if let response = record.response {
                 username = response.entry.username
-                dateStr = String(response.entry.date_stamp)
+                dateStr = EntryFormatter.displayDate(response: response)
                 
-                if let details = response.details {
+                // User the stored journal title if available, otherwise attempt to extract from the response details.
+                if (self.journalTitle != nil) {
+                    journalTitle = self.journalTitle!
+                } else if let details = response.details {
                     journalTitle = details.journal_title
+                    self.journalTitle = journalTitle
                 }
             }
         }
@@ -190,6 +198,7 @@ class JournalViewController: JournalExploreViewController, UIScrollViewDelegate,
             // Update the current view controller and reposition the scroll view immediately.
             self.configureEntryViewControllerAt(cursor: .Current)
             scrollView.setContentOffset(CGPoint(x: width, y: 0), animated: false)
+            self.configureTitles()
             
             // Request an update for the entry.
             _ = EntryManager.shared.updateRecord(for: ids[.Current]!)
@@ -211,7 +220,7 @@ class JournalViewController: JournalExploreViewController, UIScrollViewDelegate,
         entryNavigationTitleBarHeight.constant = height
     }
     
-    func entryViewController(_ entryViewController: EntryViewController, didEnableCellEditiing enabled: Bool) {
+    func entryViewController(_ entryViewController: EntryViewController, didEnableCellEditing enabled: Bool) {
         
         // When cell editing may happen, prevent the scrollview from scrolling.
         scrollView.isScrollEnabled = !enabled
