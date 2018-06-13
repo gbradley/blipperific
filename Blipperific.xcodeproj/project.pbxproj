@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BF0346E020D044F6009EEE01 /* ErrorMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF0346DF20D044F6009EEE01 /* ErrorMessageView.xib */; };
 		BF0346E220D04541009EEE01 /* ErrorMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0346E120D04541009EEE01 /* ErrorMessageView.swift */; };
+		BF0346E420D15BEE009EEE01 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0346E320D15BEE009EEE01 /* ErrorMessage.swift */; };
 		BF29AD7B20A0EF22002DB4CE /* EntryStreamPaginationViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF29AD7A20A0EF22002DB4CE /* EntryStreamPaginationViewCell.xib */; };
 		BF29AD7F20A0F503002DB4CE /* FontAwesomeFreeRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BF29AD7E20A0F502002DB4CE /* FontAwesomeFreeRegular.otf */; };
 		BF2CCCCD209A045F004598B8 /* StatisticButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2CCCCC209A045F004598B8 /* StatisticButton.swift */; };
@@ -93,6 +94,7 @@
 		57111022F5883FA3C2677ABD /* Pods-Blipperific.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blipperific.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Blipperific/Pods-Blipperific.debug.xcconfig"; sourceTree = "<group>"; };
 		BF0346DF20D044F6009EEE01 /* ErrorMessageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorMessageView.xib; sourceTree = "<group>"; };
 		BF0346E120D04541009EEE01 /* ErrorMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessageView.swift; sourceTree = "<group>"; };
+		BF0346E320D15BEE009EEE01 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		BF29AD7A20A0EF22002DB4CE /* EntryStreamPaginationViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryStreamPaginationViewCell.xib; sourceTree = "<group>"; };
 		BF29AD7E20A0F502002DB4CE /* FontAwesomeFreeRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesomeFreeRegular.otf; sourceTree = "<group>"; };
 		BF2CCCCC209A045F004598B8 /* StatisticButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticButton.swift; sourceTree = "<group>"; };
@@ -392,6 +394,7 @@
 			children = (
 				BFBCCEB520C91E7500C13EA3 /* EntryManager.swift */,
 				BFFDD36020CEFB770035AC5F /* EntryFormatter.swift */,
+				BF0346E320D15BEE009EEE01 /* ErrorMessage.swift */,
 			);
 			path = "Managers & Helpers";
 			sourceTree = "<group>";
@@ -625,6 +628,7 @@
 				BFBCCE9F20C6EBC700C13EA3 /* EntryTableViewPhotoCell.swift in Sources */,
 				BFFDD35520CED9030035AC5F /* JournalViewController.swift in Sources */,
 				BF2CCCCD209A045F004598B8 /* StatisticButton.swift in Sources */,
+				BF0346E420D15BEE009EEE01 /* ErrorMessage.swift in Sources */,
 				BF4B334920910271000262F8 /* HeadingLabel.swift in Sources */,
 				BF8B4DCE20930BCF00BAD163 /* PhotoBackgroundView.swift in Sources */,
 				BFBCCE9D20C68D8600C13EA3 /* String+HTML.swift in Sources */,
