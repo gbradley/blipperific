@@ -214,16 +214,13 @@ class JournalViewController: JournalExploreViewController, UIScrollViewDelegate,
     
     func entryViewController(_ entryViewController: EntryViewController, didScrollToY y: CGFloat) {
         
+        // Let the user scroll between entries when they are at the top of the entry view controller.
+        scrollView.isScrollEnabled = y == 0
+        
         // Resize the journal bar to hidden when the main table scrolls down.
         let height = max(0, min(journalBarHeight, journalBarHeight - y))
         journalBarHeightConstraint.constant = height
         entryNavigationTitleBarHeight.constant = height
-    }
-    
-    func entryViewController(_ entryViewController: EntryViewController, didEnableCellEditing enabled: Bool) {
-        
-        // When cell editing may happen, prevent the scrollview from scrolling.
-        scrollView.isScrollEnabled = !enabled
     }
     
     func heightForJournalBar() -> CGFloat {

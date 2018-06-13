@@ -12,8 +12,6 @@ protocol EntryViewControllerDelegate {
     
     func entryViewController(_ entryViewController : EntryViewController, didScrollToY y : CGFloat)
     
-    func entryViewController(_ entryViewController : EntryViewController, didEnableCellEditing enabled : Bool)
-    
     func heightForJournalBar() -> CGFloat
     
 }
@@ -44,8 +42,6 @@ class EntryViewController: JournalExploreViewController, UITableViewDataSource, 
     var rows : [SectionType : [RowType]] = [:]
     var entryStatisticsView : EntryStatisticsView?
     
-    var cellEditing : Bool = false
-    var expectsUpdates : Bool = false
     var delegate : JournalViewController?
     
     convenience init(id : Int, nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -70,9 +66,8 @@ class EntryViewController: JournalExploreViewController, UITableViewDataSource, 
         entryTableView.dataSource = self
         entryTableView.delegate = self
         
+        // Hide the table view if there is no entry to display.
         entryTableView.isHidden = self.id == 0
-        
-        self.expectsUpdates = self.record.dataStatus != .Complete
         
         _ = self.configureSections()
     }
@@ -86,28 +81,35 @@ class EntryViewController: JournalExploreViewController, UITableViewDataSource, 
         self.id = id
         self.record = EntryManager.shared.record(for: id)
     
-        // If the ID has changed, reset the sections and whether we're expecting more updates.
+        // If the ID has changed, reset the sections.
         if (entryHasChanged) {
             sections = []
-            expectsUpdates = self.record.dataStatus != .Complete
         }
         
+         // Hide the table view if there is no entry to display.
         entryTableView.isHidden = self.id == 0
+
         let updateSections = self.configureSections()
         if (entryHasChanged) {
             entryTableView.reloadData()
         } else {
-            entryTableView.insertSections(IndexSet(updateSections), with: .fade)
             
             // Because row animations aren't applied to section footers, wait until the section is inserted before displaying the footer manually.
+            let footerView = self.entryStatisticsView
+            if (footerView != nil) {
+                footerView?.isHidden = true
+            }
+            
+            entryTableView.insertSections(IndexSet(updateSections), with: .fade)
+
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 
                 // If the footer has been created, show it now.
-                if let footerView = self.entryStatisticsView {
-                    footerView.alpha = 0
-                    footerView.isHidden = false
+                if (footerView != nil) {
+                    footerView?.alpha = 0
+                    footerView?.isHidden = false
                     UIView.animate(withDuration: 0.1, animations: {
-                        footerView.alpha = 1
+                        footerView?.alpha = 1
                     })
                 }
             
@@ -237,20 +239,6 @@ class EntryViewController: JournalExploreViewController, UITableViewDataSource, 
         return cell
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if (indexPath.row == RowType.Spacer.rawValue) {
-            cellEditing = false
-            self.delegate?.entryViewController(self, didEnableCellEditing: cellEditing)
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if (indexPath.row == RowType.Spacer.rawValue) {
-            cellEditing = true
-            self.delegate?.entryViewController(self, didEnableCellEditing: cellEditing)
-        }
-    }
-    
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         let sectionType = sections[section]
         return sectionType == .Detail ? 44 : 0
@@ -268,9 +256,6 @@ class EntryViewController: JournalExploreViewController, UITableViewDataSource, 
             statisticsView.onActionTapped { (action) in
                 print("doing " + action)
             }
-            
-            // If updates are expected, hide the statistics view, otherwise just show it immediately.
-            statisticsView.isHidden = self.expectsUpdates
             
             // Store a reference to the view so we can access it later (the table's `footerView` method only works with HeaderFooterViews).
             self.entryStatisticsView = statisticsView
