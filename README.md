@@ -1,5 +1,5 @@
 # blipperific
-A modern iPhone app for Blipfoto, aiming work on all recent devices and iOS versions.
+A modern iPhone app for Blipfoto, aiming work on all recent devices (iPhone X) and iOS versions (12).
 
 ## Contributing
 
