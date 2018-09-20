@@ -26,11 +26,11 @@ class ErrorMessage {
             let subview = window.subviews.first!
             
             // Calculate the height of the message, taking into account the labels's padding and font.
-            let rect = message.boundingRect(with: CGSize(width: subview.frame.size.width - 20, height: 10000), options: [NSStringDrawingOptions.usesLineFragmentOrigin, NSStringDrawingOptions.usesFontLeading], attributes: [NSAttributedStringKey.font : UILabel.appearance().font], context: nil)
+            let rect = message.boundingRect(with: CGSize(width: subview.frame.size.width - 20, height: 10000), options: [NSStringDrawingOptions.usesLineFragmentOrigin, NSStringDrawingOptions.usesFontLeading], attributes: [NSAttributedString.Key.font : UILabel.appearance().font], context: nil)
             errorMessageHeight = ceil(rect.size.height) + 20
             
             // Create the view and set its frame offset by the the calculated height.
-            errorMessageView = Bundle.main.loadNibNamed("ErrorMessageView", owner: self, options: nil)![0] as! ErrorMessageView
+            errorMessageView = Bundle.main.loadNibNamed("ErrorMessageView", owner: self, options: nil)![0] as? ErrorMessageView
             errorMessageView.messageLabel.text = message
             errorMessageView.frame = CGRect(x: 0, y: subview.frame.size.height, width: subview.frame.size.width, height: errorMessageHeight)
             window.addSubview(errorMessageView)

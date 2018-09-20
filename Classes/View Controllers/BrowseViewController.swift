@@ -39,7 +39,7 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         // Hook up the browse table view and set its cells to use automatic height.
         self.browseTableView.register(UINib(nibName: "BrowseTableViewCell", bundle:nil), forCellReuseIdentifier: "BrowseTableViewCell")
-        browseTableView.rowHeight = UITableViewAutomaticDimension
+        browseTableView.rowHeight = UITableView.automaticDimension
         browseTableView.estimatedRowHeight = 195
         
         // Add records to the EntryManager and create an array of IDs.

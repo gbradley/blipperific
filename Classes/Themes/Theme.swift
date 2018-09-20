@@ -73,8 +73,8 @@ class Theme {
         // Set appearance for nagivation bar.
         let navigationBarAppearance = UINavigationBar.appearance()
         navigationBarAppearance.titleTextAttributes = [
-            NSAttributedStringKey.foregroundColor: self.headingColor,
-            NSAttributedStringKey.font: UIFont(name: self.fontName, size: 24)!
+            NSAttributedString.Key.foregroundColor: self.headingColor,
+            NSAttributedString.Key.font: UIFont(name: self.fontName, size: 24)!
         ]
         navigationBarAppearance.barStyle = self.navigationBarStyle
         navigationBarAppearance.barTintColor = self.backgroundColor
@@ -82,10 +82,10 @@ class Theme {
         // Set appearance for bar buttons.
         let barButtonItemAppearance = UIBarButtonItem.appearance()
         barButtonItemAppearance.tintColor = self.buttonColor
-        for controlState in [UIControlState.normal, UIControlState.disabled, UIControlState.focused, UIControlState.highlighted, UIControlState.selected] {
+        for controlState in [UIControl.State.normal, UIControl.State.disabled, UIControl.State.focused, UIControl.State.highlighted, UIControl.State.selected] {
             barButtonItemAppearance.setTitleTextAttributes([
-                NSAttributedStringKey.foregroundColor: self.buttonColor,
-                NSAttributedStringKey.font: UIFont(name: self.fontName, size: 15)!
+                NSAttributedString.Key.foregroundColor: self.buttonColor,
+                NSAttributedString.Key.font: UIFont(name: self.fontName, size: 15)!
                 ], for: controlState)
         }
         

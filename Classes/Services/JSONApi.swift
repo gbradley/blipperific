@@ -77,8 +77,9 @@ class JSONApi {
             }
             
             if (apiError != nil) {
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                appDelegate.displayErrorMessage(message : apiError!.message)
+                
+                //let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                //appDelegate.displayErrorMessage(message : apiError!.message)
             }
             
             if (callback != nil) {

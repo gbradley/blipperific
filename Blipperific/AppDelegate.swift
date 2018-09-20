@@ -15,12 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
     var theme: Theme!
     var tabBarController : UITabBarController!
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
         // Load up the tab bar from the XIB, which means we can use the appearance proxy on its tab bar and the bar items.
-        self.tabBarController = Bundle.main.loadNibNamed("TabBar", owner: self, options: nil)![0] as! UITabBarController
+        self.tabBarController = Bundle.main.loadNibNamed("TabBar", owner: self, options: nil)![0] as? UITabBarController
         self.tabBarController.delegate = self
         
         self.loadBrowseTab(self.tabBarController.viewControllers![0] as! UINavigationController)

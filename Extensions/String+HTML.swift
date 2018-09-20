@@ -28,15 +28,15 @@ extension String {
         let range = NSRange(location: 0, length: attributedString.length)
         
         // Set the default text color and font.
-        attributedString.addAttribute(NSAttributedStringKey.foregroundColor, value: currentTheme.textColor, range: range)
+        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: currentTheme.textColor, range: range)
         
         // Set the paragraph attributes.
         let paragraphStyle = NSMutableParagraphStyle.init()
         paragraphStyle.lineSpacing = currentTheme.userTextLineSpacing
-        attributedString.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: range)
+        attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: range)
         
         // Enumate through the occurances of the font attribute.
-        attributedString.enumerateAttribute(NSAttributedStringKey.font, in: range, options: NSAttributedString.EnumerationOptions.longestEffectiveRangeNotRequired) { (value, range, obj) in
+        attributedString.enumerateAttribute(NSAttributedString.Key.font, in: range, options: NSAttributedString.EnumerationOptions.longestEffectiveRangeNotRequired) { (value, range, obj) in
             
             let currentFont : UIFont = value as! UIFont
             var replacementFont : UIFont?
@@ -50,7 +50,7 @@ extension String {
                 replacementFont = UIFont(name: currentTheme.userTextFontName, size: 13)
             }
             
-            attributedString.addAttributes([NSAttributedStringKey.font : replacementFont!], range: range)
+            attributedString.addAttributes([NSAttributedString.Key.font : replacementFont!], range: range)
         }
         
         return attributedString

@@ -35,7 +35,7 @@ class EntryStreamTableViewCell : UITableViewCell {
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateForTheme), name: .themeWasApplied, object: nil)
         
         // Add the statistics view.
-        self.statisticsView = Bundle.main.loadNibNamed("EntryStatisticsView", owner: self, options: nil)![0] as! EntryStatisticsView
+        self.statisticsView = Bundle.main.loadNibNamed("EntryStatisticsView", owner: self, options: nil)![0] as? EntryStatisticsView
         self.statisticsView.frame = CGRect(x: 0, y: 0, width: statisticsContainerView.frame.size.width, height: statisticsContainerView.frame.size.height)
         statisticsContainerView.addSubview(self.statisticsView)
         self.statisticsView.onActionTapped { (action) in
@@ -47,7 +47,7 @@ class EntryStreamTableViewCell : UITableViewCell {
         super.layoutSubviews()
         
         // Ensure a 5px spacing between the table cells.
-        contentView.frame = UIEdgeInsetsInsetRect(contentView.frame, UIEdgeInsetsMake(5, 5, 5, 5))
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets.init(top: 5, left: 5, bottom: 5, right: 5))
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

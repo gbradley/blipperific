@@ -270,7 +270,7 @@ class EntryViewController: JournalExploreViewController, UITableViewDataSource, 
         return false
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
     }
     
     // ! Scroll view delegate
@@ -316,7 +316,7 @@ class EntryViewController: JournalExploreViewController, UITableViewDataSource, 
     // Size calculations
     func heightForPhoto() -> CGFloat {
         let width = self.view.frame.size.width
-        return fabs((width) / CGFloat(record.response!.entry.image_aspect_ratio!))
+        return abs((width) / CGFloat(record.response!.entry.image_aspect_ratio!))
     }
     
     func heightForDescription() -> CGFloat {

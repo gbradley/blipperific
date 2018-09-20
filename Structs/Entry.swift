@@ -64,16 +64,3 @@ struct EntryRecord : Codable {
     var response : EntryResponse?
     
 }
-
-
-struct Fuck : Codable {
- 
-    var entry : FuckSummary
-    
-}
-
-struct FuckSummary : Codable {
-    
-    var entry_id : Int
-    
-}

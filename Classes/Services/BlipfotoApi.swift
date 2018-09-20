@@ -41,8 +41,8 @@ class BlipfotoApi : JSONApi {
             do {
                 data = try JSONSerialization.data(withJSONObject: json["data"]!, options: [])
             } catch {
+                apiError = ApiError(code : 0, message : "Malformed data payload")
             }
-            apiError = ApiError(code : 0, message : "Malformed data payload")
         }
         
         return ["data" : data, "apiError" : apiError]
