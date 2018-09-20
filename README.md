@@ -9,4 +9,10 @@ You're more than welcome to submit pull requests for features or issues. You'll 
 
 1. Clone the repo.
 2. Run `pod install` to download the project dependencies.
-3. Double-click "blipperific.xcworkspace" to open the project.
+3. Double-click "blipperific.xcworkspace" to open the project in XCode
+4. Add the following entries to the "Pods/Pods-Blipperific.debug.xcconfig" file:
+
+    ```
+    BLIPFOTO_API_URL = https:\/\/www.blipfoto.com\/4\/	
+    BLIPFOTO_API_ACCESS_TOKEN  = {YOUR_ACCESS_TOKEN}
+    ```
