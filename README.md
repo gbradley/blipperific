@@ -13,6 +13,6 @@ You're more than welcome to submit pull requests for features or issues. You'll 
 4. Add the following entries to the "Pods/Pods-Blipperific.debug.xcconfig" file:
 
     ```
-    BLIPFOTO_API_URL = https:\/\/www.blipfoto.com\/4\/	
+    BLIPFOTO_API_URL = https:\/\/api.blipfoto.com\/4\/	
     BLIPFOTO_API_ACCESS_TOKEN  = {YOUR_ACCESS_TOKEN}
     ```
